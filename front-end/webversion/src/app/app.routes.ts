@@ -18,6 +18,7 @@ import { WorkShopComponent } from './views/front/work-shop/work-shop.component';
 
 
 
+
 export const routes: Routes = [
    {path:'',component:UserfrontComponent,children: [
     {path:'home',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
