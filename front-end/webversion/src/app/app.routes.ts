@@ -20,7 +20,8 @@ import { WorkShopComponent } from './views/front/work-shop/work-shop.component';
 
 export const routes: Routes = [
    {path:'',component:UserfrontComponent,children: [
-    {path:'',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
+    {path:'home',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
+    {path:'about',loadComponent:()=>import('./views/front/about/about.component').then(c=>c.AboutComponent)},
     {path:'events',loadComponent:()=>import('./views/front/events/events.component').then(c=>c.EventsComponent)},
     {path:'workShop',loadComponent:()=>import('./views/front/work-shop/work-shop.component').then(c=>c.WorkShopComponent)},
     {path:'groups',loadComponent:()=>import('./views/front/groups/groups.component').then(c=>c.GroupsComponent)},
