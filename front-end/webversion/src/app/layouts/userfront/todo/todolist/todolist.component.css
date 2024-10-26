@@ -1,0 +1,43 @@
+
+.cadre{
+margin-top: 100px;
+margin-bottom: 100px;
+margin-left: 100px;
+margin-right: 200px;
+
+border-radius: 10px;
+ width: 1400px; 
+ height: 600px;
+
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(234, 114, 34, 0.438);
+}
+input{
+ margin-left: 20px;
+ margin-right: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 1, 0.19);
+
+}
+button{
+    border-radius: 20px;
+    width: 30px;
+    height: 50px;
+    margin-right: 15px;
+}
+h4{
+    text-align: center;
+    color: rgb(220, 82, 32);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+}
+hr{
+    color: rgb(226, 128, 43);
+}
+h2{
+
+    text-align: center;
+    padding-top: 5px;
+    color: rgb(220, 82, 32);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 200;
+}
