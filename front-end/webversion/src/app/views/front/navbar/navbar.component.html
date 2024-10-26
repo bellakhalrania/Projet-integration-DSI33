@@ -1,0 +1,84 @@
+<!-- Navbar Start -->
+<div class="container-fluid border-bottom  wow fadeIn" data-wow-delay="0.1s" >
+    <div class="container topbar  d-none d-lg-block py-2" style="border-radius: 0 40px;background-color:#b37391;"><!--6af568 /b37391-->
+        <div class="d-flex justify-content-between">
+            <div class="top-info ps-2">
+                <small class="me-3">
+                    <i class="fas fa-map-marker-alt me-2 text-secondary"></i> 
+                    <a href="#" class="text-white">Tunis,Bizert</a>
+                </small>
+                <small class="me-3">
+                    <i class="fas fa-envelope me-2 text-secondary"></i>
+                    <a href="#" class="text-white">EmailExample.com</a>
+                </small>
+            </div>
+            <div class="top-link pe-2">
+                <a href="" class="btn btn-light btn-sm-square rounded-circle">
+                    <i class="fab fa-facebook-f text-secondary"></i>
+                </a>
+                <a href="" class="btn btn-light btn-sm-square rounded-circle">
+                    <i class="fab fa-twitter text-secondary"></i>
+                </a>
+                <a href="" class="btn btn-light btn-sm-square rounded-circle">
+                    <i class="fab fa-instagram text-secondary"></i>
+                </a>
+                <a href="" class="btn btn-light btn-sm-square rounded-circle me-0">
+                    <i class="fab fa-linkedin-in text-secondary"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container px-0">
+        <nav class="navbar navbar-light navbar-expand-xl py-3">
+            <a routerLink="/home" class="navbar-brand">
+                <h1 class="display-6 text-vert">Mental<span class="text-secondary">Health</span></h1>
+            </a>
+            <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars text-primary"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto">
+                    <a routerLink="/home" class="nav-item nav-link active">Home</a>
+                    <a routerLink="/about" class="nav-item nav-link">About</a>
+                    <a routerLink="/events" class="nav-item nav-link">Events</a>
+                    <div class="nav-item dropdown">
+                        <a routerLink="/workShop" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">WorkShop</a>
+                        <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                            <a routerLink="/groups" class="nav-item nav-link">Groups</a>
+                            <a routerLink="/quizs" class="nav-item nav-link">Quizs</a>
+                            <a routerLink="/relax" class="nav-item nav-link">Relax</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a routerLink="/resources" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                        <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                            <a routerLink="/articles" class="nav-item nav-link">Articles</a>
+                            <a routerLink="/initiatives" class="nav-item nav-link">Initiatives</a>
+                        </div>
+                    </div>
+                    <a routerLink="/contact" class="nav-item nav-link">Contact</a>
+                    <a routerLink="/signin" class="nav-item nav-link">Sign In</a>
+                </div>
+
+                <div class="d-flex me-4">
+                    <div id="phone-tada" class="d-flex align-items-center justify-content-center">
+                        <a href="" class="position-relative wow tada" data-wow-delay=".9s">
+                            <i class="fa fa-phone-alt  fa-2x me-4 text-rose"></i>
+                            <div class="position-absolute" style="top: -7px; left: 20px;">
+                                <span><i class="fa fa-comment-dots text-rose"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column pe-3 border-end border-primary">
+                        <span class="text-secondery">Have any questions?</span>
+                        <a href="#"><span class="text-rose">Free: +216 72 452 111</span></a>
+                    </div>
+                </div>
+                <button class="btn-search   btn-md-square rounded-circle btn-rose" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <i class="fas fa-search text-white"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->
