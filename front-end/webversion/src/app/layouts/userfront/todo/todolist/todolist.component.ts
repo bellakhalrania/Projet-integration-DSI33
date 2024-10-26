@@ -7,6 +7,7 @@ interface Task{
   name:string;
   startDate:string;
   startTime: string;
+  completed: boolean ;
 }
 @Component({
   selector: 'app-todolist',
@@ -23,11 +24,13 @@ export class TodolistComponent {
 Title="Add your Tasks";
 title2 ="Tasks List";
 
+
+
 taskName: string = '';
 startDate: string = '';
 startTime: string = '';
 tasks: Task[]=[];
-isAvalible :boolean =false;
+isAvalible :boolean = false;
 
 currentPage: number = 1;
 tasksPerPage: number = 5;
@@ -37,11 +40,13 @@ tasksPerPage: number = 5;
       const newTask : Task={
         name:this.taskName,
         startDate:this.startDate,
-        startTime:this.startTime
+        startTime:this.startTime,
+        completed:false
       };
       console.log(newTask);
       this.tasks.push(newTask);
       this.isAvalible =true;
+   
 
       this.taskName= '';
       this.startDate ='';

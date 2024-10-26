@@ -18,19 +18,20 @@
 
   <h4>{{title2}}</h4>
   <hr>
-<div class="input-group" *ngIf="isAvalible" >
-  <div *ngFor="let task of tasks; let i = index" class="input-group mb-3">
-    <input type="text" class="form-control" [value]="task.name + ' - Start Date : ' + task.startDate + ' at ' + task.startTime" aria-label="Task details">
-    
-    <span class="input-group-text">
-      <i class="bi bi-pencil" (click)="editTask(i)"></i>
-    </span>
-    <span class="input-group-text">
-      <i class="bi bi-trash" (click)="deleteTask(i)"></i>
-    </span>
-
-
+  <div class="task-list">
+    <div *ngFor="let task of tasks; let i = index" class="task-item">
+      <input type="checkbox" [(ngModel)]="task.completed" class="task-checkbox" aria-label="Checkbox for task completion">
+      
+      <span class="task-text" [class.completed]="task.completed">
+        {{ task.name }} - Start Date: {{ task.startDate }} at {{ task.startTime }}
+      </span>
+  
+      <i class="bi bi-pencil edit-icon" (click)="editTask(i)" title="Edit task"></i>
+      <i class="bi bi-trash delete-icon" (click)="deleteTask(i)" title="Delete task"></i>
+    </div>
   </div>
+
+
       <!-- Pagination controls -->
       <nav *ngIf="tasks.length > tasksPerPage">
         <ul class="pagination justify-content-center">
@@ -51,6 +52,4 @@
 </div>
        
 
-
- </div>
 
