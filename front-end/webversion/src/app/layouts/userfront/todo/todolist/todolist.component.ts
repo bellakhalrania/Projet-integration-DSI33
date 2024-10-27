@@ -57,9 +57,46 @@ tasksPerPage: number = 5;
     }
 
   }
-  editTask(index:number){
-
+  isEditing = false;
+  editingIndex: number | null = null;
+  
+  editTask(index: number) {
+    let updatetask = this.tasks[index];
+    this.taskName = updatetask.name;
+    this.startDate = updatetask.startDate;
+    this.startTime = updatetask.startTime;
+  
+    // Passe en mode édition
+    this.isEditing = true;
+    this.editingIndex = index;
   }
+  
+  saveTask() {
+    if (this.isEditing && this.editingIndex !== null) {
+      // Si nous sommes en mode édition, met à jour la tâche existante
+      this.tasks[this.editingIndex] = {
+        name: this.taskName,
+        startDate: this.startDate,
+        startTime: this.startTime,
+        completed: this.tasks[this.editingIndex].completed
+      };
+  
+      // Réinitialise les variables après modification
+      this.isEditing = false;
+      this.editingIndex = null;
+    } else {
+      // Logique d'ajout d'une nouvelle tâche (si nécessaire)
+      this.addTask();
+    }
+  
+    // Réinitialise les champs de saisie
+    this.taskName = '';
+    this.startDate = '';
+    this.startTime = '';
+  }
+  
+
+  
   deleteTask(index:number){
     this.tasks.splice(index, 1);
   }
