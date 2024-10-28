@@ -43,7 +43,7 @@ tasksPerPage: number = 5;
         startTime:this.startTime,
         completed:false
       };
-      console.log(newTask);
+      
       this.tasks.push(newTask);
       this.isAvalible =true;
    
@@ -72,8 +72,9 @@ tasksPerPage: number = 5;
   }
   
   saveTask() {
+    // Vérifie si on est en mode édition
     if (this.isEditing && this.editingIndex !== null) {
-      // Si nous sommes en mode édition, met à jour la tâche existante
+      // Met à jour la tâche existante avec les nouvelles valeurs
       this.tasks[this.editingIndex] = {
         name: this.taskName,
         startDate: this.startDate,
@@ -85,7 +86,7 @@ tasksPerPage: number = 5;
       this.isEditing = false;
       this.editingIndex = null;
     } else {
-      // Logique d'ajout d'une nouvelle tâche (si nécessaire)
+      // Ajoute une nouvelle tâche si on n'est pas en mode édition
       this.addTask();
     }
   
@@ -94,6 +95,7 @@ tasksPerPage: number = 5;
     this.startDate = '';
     this.startTime = '';
   }
+  
   
 
   
