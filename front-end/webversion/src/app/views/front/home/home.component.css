@@ -1,7 +1,7 @@
 /*** Hero Header ***/
 .hero-header,
 .page-header {
-  background: linear-gradient(rgba(0, 49, 62, 0.1), rgba(4, 53, 65, 0.1)), url(../../../../assets/bg2.jpg);/*../../../../assets/mino.png*/
+  background: linear-gradient(rgba(0, 49, 62, 0.1), rgba(4, 53, 65, 0.1)), url(../../../../assets/bik.jpg);/*../../../../assets/mino.png*/
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
