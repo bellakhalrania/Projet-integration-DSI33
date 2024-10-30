@@ -16,8 +16,9 @@ import { QuizsComponent } from './views/front/quizs/quizs.component';
 
 
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { TodoListComponent } from './views/todo-list/todo-list/todo-list.component';
+
 import { SignupComponentComponent } from './layouts/signup-component/signup-component.component';
+import { TodolistComponent } from './layouts/userfront/todo/todolist/todolist.component';
 
 
 
@@ -28,7 +29,7 @@ import { SignupComponentComponent } from './layouts/signup-component/signup-comp
 
   imports: [RouterOutlet,AdminFrontComponent,
     UserfrontComponent,HomeComponent,SigninComponentComponent,SignupComponentComponent,
-    AboutComponent,TodoListComponent,
+    AboutComponent,TodolistComponent,
     RecourcesComponent,WorkShopComponent,RelaxComponent,ArticlesComponent,InitiativesComponent,
     GroupsComponent,QuizsComponent,ReactiveFormsModule],
 
