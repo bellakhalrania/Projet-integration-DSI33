@@ -14,8 +14,10 @@ import { InitiativesComponent } from './views/front/initiatives/initiatives.comp
 import { GroupsComponent } from './views/front/groups/groups.component';
 import { QuizsComponent } from './views/front/quizs/quizs.component';
 
-import { TodolisteComponent } from './layouts/views/user/todoliste/todoliste.component';
+
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { TodoListComponent } from './views/todo-list/todo-list/todo-list.component';
+import { SignupComponentComponent } from './layouts/signup-component/signup-component.component';
 
 
 
@@ -25,8 +27,10 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
   standalone: true,
 
   imports: [RouterOutlet,AdminFrontComponent,
-    UserfrontComponent,HomeComponent,SigninComponentComponent,AboutComponent,
-    RecourcesComponent,WorkShopComponent,RelaxComponent,ArticlesComponent,InitiativesComponent,GroupsComponent,QuizsComponent,ReactiveFormsModule],
+    UserfrontComponent,HomeComponent,SigninComponentComponent,SignupComponentComponent,
+    AboutComponent,TodoListComponent,
+    RecourcesComponent,WorkShopComponent,RelaxComponent,ArticlesComponent,InitiativesComponent,
+    GroupsComponent,QuizsComponent,ReactiveFormsModule],
 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

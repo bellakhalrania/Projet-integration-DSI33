@@ -15,17 +15,20 @@ import { QuizsComponent } from './views/front/quizs/quizs.component';
 import { RelaxComponent } from './views/front/relax/relax.component';
 import { WorkShopComponent } from './views/front/work-shop/work-shop.component';
 
-import { LoginComponent } from './layouts/login/login.component';
-import { SigninComponentComponent } from './signin-component/signin-component.component';
+import { SigninComponentComponent } from './layouts/signin-component/signin-component.component';
 import { SignupComponentComponent } from './layouts/signup-component/signup-component.component';
 
 
 
 
 
+
+
+
 export const routes: Routes = [
-   {path:'',component:UserfrontComponent,children: [
+    { path:'',component:UserfrontComponent,children: [
     {path:'home',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
+    {path:'todoliste',loadComponent:()=>import('./views/todo-list/todo-list/todo-list.component').then(c=>c.TodoListComponent)},
     {path:'about',loadComponent:()=>import('./views/front/about/about.component').then(c=>c.AboutComponent)},
     {path:'events',loadComponent:()=>import('./views/front/events/events.component').then(c=>c.EventsComponent)},
     {path:'workShop',loadComponent:()=>import('./views/front/work-shop/work-shop.component').then(c=>c.WorkShopComponent)},
@@ -38,10 +41,12 @@ export const routes: Routes = [
     {path:'contact',loadComponent:()=>import('./views/front/contact/contact.component').then(c=>c.ContactComponent)},
     
 
-   ]},
+     ]}
 
+    ,{path:'admin',component:AdminFrontComponent}
+    ,{path:'login',component:SignupComponentComponent}
+    ,{path:'signin',component:SigninComponentComponent},
 
-    ,{path:'admin',component:AdminFrontComponent},{path:'login',component:LoginComponent}
-,{path:"signup",component:SignupComponentComponent}
+    
 
 ];
