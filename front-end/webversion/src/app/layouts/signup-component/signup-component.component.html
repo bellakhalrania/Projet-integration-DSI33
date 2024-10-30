@@ -1,0 +1,157 @@
+<div class="bb">
+    <div id="main-wrapper" class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="card border-0 cc">
+                    <div class="card-body p-0">
+                        <div class="row no-gutters">
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="mb-5">
+                                        <h3 class="h4 font-weight-bold text-theme log">Sign Up</h3>
+                                    </div>
+
+                                    <h6 class="h5 mb-0">Create your account!</h6>
+                                    <h6 class="h5 mb-0 p">A step closer for healthcare </h6>
+
+                                    <br />
+                                    <form [formGroup]="signupForm">
+                                        <!-- First Name Field -->
+                                        <div class="form-group">
+                                            <label for="firstName">First Name</label>
+                                            <input type="text" class="form-control" id="firstName" formControlName="firstName" />
+                                            <div class="error" *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched">
+                                                <div *ngIf="signupForm.get('firstName')?.errors?.['required']">
+                                                    First Name is required!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Last Name Field -->
+                                        <div class="form-group">
+                                            <label for="lastName">Last Name</label>
+                                            <input type="text" class="form-control" id="lastName" formControlName="lastName" />
+                                            <div class="error" *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched">
+                                                <div *ngIf="signupForm.get('lastName')?.errors?.['required']">
+                                                    Last Name is required!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Username Field -->
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input type="text" class="form-control" id="username" formControlName="username" />
+                                            <div class="error" *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched">
+                                                <div *ngIf="signupForm.get('username')?.errors?.['required']">
+                                                    Username is required!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Email Field -->
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                <span><i class="bi bi-envelope"></i></span> Email address
+                                            </label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" />
+                                            <div class="error" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+                                                <div *ngIf="signupForm.get('email')?.errors?.['required']">
+                                                    Email is required!
+                                                </div>
+                                                <div *ngIf="signupForm.get('email')?.errors?.['email']">
+                                                    Invalid email format!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Password Field -->
+                                        <div class="form-group mb-5">
+                                            <label for="exampleInputPassword1">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" />
+                                            <div class="error" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+                                                <div *ngIf="signupForm.get('password')?.errors?.['required']">
+                                                    Password is required!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Confirm Password Field -->
+                                        <div class="form-group mb-5">
+                                            <label for="exampleInputPasswordConfirm">Confirm Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPasswordConfirm" formControlName="confirmPassword" />
+                                            <div class="error" *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched">
+                                                <div *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">
+                                                    Password confirmation is required!
+                                                </div>
+                                                <div *ngIf="signupForm.hasError('matching')">
+                                                    Passwords do not match!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Address Field -->
+                                        <div class="form-group mb-5">
+                                            <label for="exampleInputAddress">Address</label>
+                                            <input type="text" class="form-control" id="exampleInputAddress" formControlName="address" />
+                                            <div class="error" *ngIf="signupForm.get('address')?.invalid && signupForm.get('address')?.touched">
+                                                <div *ngIf="signupForm.get('address')?.errors?.['required']">
+                                                    Address is required!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Profile Image Field -->
+                                        <div class="form-group mb-5">
+                                            <label for="exampleInputImage">Profile Image</label>
+                                            <input type="file" class="form-control" id="exampleInputImage" formControlName="profileImage" />
+                                        </div>
+
+                                        <!-- Action Buttons -->
+                                        <div class="actionbutton">
+                                            <button type="submit" class="button" [disabled]="signupForm.invalid">
+                                                <span><i class="bi bi-box-arrow-in-right"></i></span> Sign Up
+                                            </button>
+                                            <button type="button" class="button" (click)="clearform()">
+                                                <span><i class="bi bi-trash"></i></span> Clear
+                                            </button>
+                                        </div>
+                                        <br>
+                                        <div class="social-signup">
+                                            <h6 class="text-center">Or sign up with:</h6>
+                                            <div class="d-flex justify-content-center">
+                                                <button type="button" class="btn btn-danger mx-2">
+                                                    <i class="bi bi-google"></i> Google
+                                                </button>
+                                                <button type="button" class="btn btn-primary mx-2">
+                                                    <i class="bi bi-facebook"></i> Facebook
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <p class="forgot-link float-right text-primary fp">
+                                            Already have an account?
+                                            <a href="" class="text-primary ml-1 reg">Login</a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 d-none d-lg-inline-block">
+                                <div class="account-block rounded-right">
+                                    <div class="overlay rounded-right"></div>
+                                    <div class="account-testimonial"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-muted text-center mt-3 mb-0 forget">
+                    Don't have an account?
+                    <a href="" class="text-primary ml-1 reg">Register</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
