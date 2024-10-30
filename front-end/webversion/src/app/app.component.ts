@@ -30,7 +30,7 @@ import { TodoListComponent } from './views/user/todo-list/todo-list.component';
   imports: [RouterOutlet,AdminFrontComponent,
     UserfrontComponent,HomeComponent,SigninComponentComponent,SignupComponentComponent,
 
-    AboutComponent,ReactiveFormsModule,EventsComponent,ContactComponent,ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent,],
+    AboutComponent,ReactiveFormsModule,EventsComponent,ContactComponent,ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent],
 
 
   templateUrl: './app.component.html',
