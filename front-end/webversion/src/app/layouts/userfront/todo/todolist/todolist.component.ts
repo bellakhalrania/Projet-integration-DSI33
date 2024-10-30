@@ -43,7 +43,7 @@ tasksPerPage: number = 5;
         startTime:this.startTime,
         completed:false
       };
-      console.log(newTask);
+      
       this.tasks.push(newTask);
       this.isAvalible =true;
    
@@ -57,9 +57,48 @@ tasksPerPage: number = 5;
     }
 
   }
-  editTask(index:number){
-
+  isEditing = false;
+  editingIndex: number | null = null;
+  
+  editTask(index: number) {
+    let updatetask = this.tasks[index];
+    this.taskName = updatetask.name;
+    this.startDate = updatetask.startDate;
+    this.startTime = updatetask.startTime;
+  
+    // Passe en mode édition
+    this.isEditing = true;
+    this.editingIndex = index;
   }
+  
+  saveTask() {
+    // Vérifie si on est en mode édition
+    if (this.isEditing && this.editingIndex !== null) {
+      // Met à jour la tâche existante avec les nouvelles valeurs
+      this.tasks[this.editingIndex] = {
+        name: this.taskName,
+        startDate: this.startDate,
+        startTime: this.startTime,
+        completed: this.tasks[this.editingIndex].completed
+      };
+  
+      // Réinitialise les variables après modification
+      this.isEditing = false;
+      this.editingIndex = null;
+    } else {
+      // Ajoute une nouvelle tâche si on n'est pas en mode édition
+      this.addTask();
+    }
+  
+    // Réinitialise les champs de saisie
+    this.taskName = '';
+    this.startDate = '';
+    this.startTime = '';
+  }
+  
+  
+
+  
   deleteTask(index:number){
     this.tasks.splice(index, 1);
   }
