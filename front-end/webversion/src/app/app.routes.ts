@@ -28,7 +28,7 @@ import { SignupComponentComponent } from './layouts/signup-component/signup-comp
 export const routes: Routes = [
     { path:'',component:UserfrontComponent,children: [
     {path:'home',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
-    
+    {path:'todoliste',loadComponent:()=>import('./layouts/userfront/todo/todolist/todolist.component').then(c=>c.TodolistComponent)},
     {path:'about',loadComponent:()=>import('./views/front/about/about.component').then(c=>c.AboutComponent)},
     {path:'events',loadComponent:()=>import('./views/front/events/events.component').then(c=>c.EventsComponent)},
     {path:'workShop',loadComponent:()=>import('./views/front/work-shop/work-shop.component').then(c=>c.WorkShopComponent)},
@@ -39,8 +39,6 @@ export const routes: Routes = [
     {path:'articles',loadComponent:()=>import('./views/front/articles/articles.component').then(c=>c.ArticlesComponent)},
     {path:'initiatives',loadComponent:()=>import('./views/front/initiatives/initiatives.component').then(c=>c.InitiativesComponent)},
     {path:'contact',loadComponent:()=>import('./views/front/contact/contact.component').then(c=>c.ContactComponent)},
-    
-
      ]}
 
     ,{path:'admin',component:AdminFrontComponent}
