@@ -15,6 +15,7 @@ import { ContactComponent } from './views/front/contact/contact.component';
 
 import { SigninComponentComponent } from './layouts/signin-component/signin-component.component';
 import { SignupComponentComponent } from './layouts/signup-component/signup-component.component';
+import { ClientComponent } from './layouts/client/client.component';
 
 
 
@@ -25,7 +26,7 @@ import { SignupComponentComponent } from './layouts/signup-component/signup-comp
 
 export const routes: Routes = [
     { path:'',component:UserfrontComponent,children: [
-
+        {path:'home',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
     {path:'about',loadComponent:()=>import('./views/front/about/about.component').then(c=>c.AboutComponent)},
     {path:'events',loadComponent:()=>import('./views/front/events/events.component').then(c=>c.EventsComponent)},
 
@@ -35,6 +36,18 @@ export const routes: Routes = [
     ,{path:'admin',component:AdminFrontComponent}
     ,{path:'login',component:SignupComponentComponent}
     ,{path:'signin',component:SigninComponentComponent},
+
+
+    { path:'client',component:ClientComponent,children: [
+        {path:'user/acceuil',loadComponent:()=>import('./views/user/acceuil/acceuil.component').then(c=>c.AcceuilComponent)},
+        {path:'user/events',loadComponent:()=>import('./views/user/evenement/evenement.component').then(c=>c.EvenementComponent)},
+        {path:'user/contact',loadComponent:()=>import('./views/user/contact-us/contact-us.component').then(c=>c.ContactUsComponent)},
+        {path:'user/about',loadComponent:()=>import('./views/user/about-us/about-us.component').then(c=>c.AboutUsComponent)},
+        {path:'user/groups',loadComponent:()=>import('./views/user/groups/groups.component').then(c=>c.GroupsComponent)},
+        {path:'user/worckshop',loadComponent:()=>import('./views/user/worckshop/worckshop.component').then(c=>c.WorckshopComponent)},
+        {path:'user/todo-list',loadComponent:()=>import('./views/user/todo-list/todo-list.component').then(c=>c.TodoListComponent)},
+
+        ]}
 
     
 
