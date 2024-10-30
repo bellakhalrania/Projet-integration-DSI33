@@ -6,7 +6,8 @@ import { UserfrontComponent } from './layouts/userfront/userfront.component';
 import { SigninComponentComponent } from './layouts/signin-component/signin-component.component';
 import { HomeComponent } from './views/front/home/home.component';
 import { AboutComponent } from './views/front/about/about.component';
-
+import { EventsComponent } from './views/front/events/events.component';
+import { ContactComponent } from './views/front/contact/contact.component';
 
 
 
@@ -24,7 +25,9 @@ import { SignupComponentComponent } from './layouts/signup-component/signup-comp
 
   imports: [RouterOutlet,AdminFrontComponent,
     UserfrontComponent,HomeComponent,SigninComponentComponent,SignupComponentComponent,
-    AboutComponent,ReactiveFormsModule],
+
+    AboutComponent,ReactiveFormsModule,EventsComponent,ContactComponent],
+
 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
