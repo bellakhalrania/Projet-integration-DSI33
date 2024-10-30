@@ -39,13 +39,13 @@ export const routes: Routes = [
 
 
     { path:'client',component:ClientComponent,children: [
-        {path:'user/acceuil',loadComponent:()=>import('./views/user/acceuil/acceuil.component').then(c=>c.AcceuilComponent)},
-        {path:'user/events',loadComponent:()=>import('./views/user/evenement/evenement.component').then(c=>c.EvenementComponent)},
-        {path:'user/contact',loadComponent:()=>import('./views/user/contact-us/contact-us.component').then(c=>c.ContactUsComponent)},
-        {path:'user/about',loadComponent:()=>import('./views/user/about-us/about-us.component').then(c=>c.AboutUsComponent)},
-        {path:'user/groups',loadComponent:()=>import('./views/user/groups/groups.component').then(c=>c.GroupsComponent)},
-        {path:'user/worckshop',loadComponent:()=>import('./views/user/worckshop/worckshop.component').then(c=>c.WorckshopComponent)},
-        {path:'user/todo-list',loadComponent:()=>import('./views/user/todo-list/todo-list.component').then(c=>c.TodoListComponent)},
+        {path:'acceuil',loadComponent:()=>import('./views/user/acceuil/acceuil.component').then(c=>c.AcceuilComponent)},
+        {path:'events',loadComponent:()=>import('./views/user/evenement/evenement.component').then(c=>c.EvenementComponent)},
+        {path:'contact',loadComponent:()=>import('./views/user/contact-us/contact-us.component').then(c=>c.ContactUsComponent)},
+        {path:'about',loadComponent:()=>import('./views/user/about-us/about-us.component').then(c=>c.AboutUsComponent)},
+        {path:'groups',loadComponent:()=>import('./views/user/groups/groups.component').then(c=>c.GroupsComponent)},
+        {path:'worckshop',loadComponent:()=>import('./views/user/worckshop/worckshop.component').then(c=>c.WorckshopComponent)},
+        {path:'todo-list',loadComponent:()=>import('./views/user/todo-list/todo-list.component').then(c=>c.TodoListComponent)},
 
         ]}
 
