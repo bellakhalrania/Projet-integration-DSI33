@@ -1,5 +1,5 @@
 .bus {
-  /* Some layout code… */
+
   animation: xAxis 5s infinite ease-in;
 }
 
@@ -15,7 +15,7 @@
 
 #footer {
   font-size: 14px;
-  
+ 
 }
 /************************************************/
 #footer .footer-newsletter {
@@ -73,7 +73,7 @@
 /*****************************************************************/
 #footer .footer-top {
   padding: 100px 0 30px 0;
-  /*background: #73C883;*/
+  
   background-image: url(../../../../assets/footing.PNG);/*url(../../../../assets/big.png)*/
   background-repeat: no-repeat;
   background-size: cover;
@@ -105,7 +105,7 @@
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #fff1c8;
+  color: #961851;
   position: relative;
   padding-bottom: 12px;
 }
@@ -152,7 +152,7 @@
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #961851;
+  background: #eba1c2;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
