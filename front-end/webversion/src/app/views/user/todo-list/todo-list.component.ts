@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -15,7 +15,8 @@ interface Task{
   imports: [
     FormsModule,
     NgFor,
-    NgIf
+    NgIf,
+    NgClass
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css'
@@ -60,21 +61,9 @@ tasksPerPage: number = 5;
   isEditing = false;
   editingIndex: number | null = null;
   
-  editTask(index: number) {
-    let updatetask = this.tasks[index];
-    this.taskName = updatetask.name;
-    this.startDate = updatetask.startDate;
-    this.startTime = updatetask.startTime;
-  
-    // Passe en mode édition
-    this.isEditing = true;
-    this.editingIndex = index;
-  }
-  
-  saveTask() {
-    // Vérifie si on est en mode édition
-    if (this.isEditing && this.editingIndex !== null) {
-      // Met à jour la tâche existante avec les nouvelles valeurs
+  toggleEditTask(index: number) {
+    if (this.isEditing && this.editingIndex === index) {
+      // Sauvegarde les modifications
       this.tasks[this.editingIndex] = {
         name: this.taskName,
         startDate: this.startDate,
@@ -85,17 +74,25 @@ tasksPerPage: number = 5;
       // Réinitialise les variables après modification
       this.isEditing = false;
       this.editingIndex = null;
+      this.resetInputFields();
     } else {
-      // Ajoute une nouvelle tâche si on n'est pas en mode édition
-      this.addTask();
-    }
+      // Charge les données de la tâche dans les champs d'entrée pour la modification
+      let updatetask = this.tasks[index];
+      this.taskName = updatetask.name;
+      this.startDate = updatetask.startDate;
+      this.startTime = updatetask.startTime;
   
-    // Réinitialise les champs de saisie
+      // Passe en mode édition
+      this.isEditing = true;
+      this.editingIndex = index;
+    }
+  }
+  
+  resetInputFields() {
     this.taskName = '';
     this.startDate = '';
     this.startTime = '';
   }
-  
   
 
   
@@ -105,21 +102,6 @@ tasksPerPage: number = 5;
 
 
   // Pagination methods
-  get paginatedTasks():Task[]{
-    const startIndex = (this.currentPage-1)*this.tasksPerPage;
-    const endIndex = startIndex + this.tasksPerPage;
-    return this.tasks.slice(startIndex , endIndex);
-  
-  }
-  changePage(page: number):void{
-    if(page >=1 && page <= this.totalPages){
-      this.currentPage=page;
-    }
-  }
-  get totalPages():number{
-     return Math.ceil(this.tasks.length/ this.tasksPerPage);
-  }
-
 }
 
 
