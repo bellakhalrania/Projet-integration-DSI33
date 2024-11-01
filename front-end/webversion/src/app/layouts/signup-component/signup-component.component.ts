@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import Validation from './utils/validation';
+import Validation from '../../../utils/validation';
 
 @Component({
   selector: 'app-signup-component',
