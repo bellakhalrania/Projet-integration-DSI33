@@ -18,6 +18,8 @@ import { GroupsComponent } from './views/user/groups/groups.component';
 import { WorckshopComponent } from './views/user/worckshop/worckshop.component';
 import { TodoListComponent } from './views/user/todo-list/todo-list.component';
 import { LoginComponent } from './layouts/login/login.component';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -27,7 +29,7 @@ import { LoginComponent } from './layouts/login/login.component';
   selector: 'app-root',
   standalone: true,
 
-  imports: [RouterOutlet,AdminFrontComponent,
+  imports: [RouterOutlet,AdminFrontComponent,CommonModule, HttpClientModule,
     UserfrontComponent,HomeComponent,LoginComponent,
     AboutComponent,ReactiveFormsModule,EventsComponent,ContactComponent,
     ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent],
