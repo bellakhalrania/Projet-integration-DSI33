@@ -66,8 +66,17 @@
 		</div>
 		<span>or use your account</span>
   
-		<input type="email" placeholder="Email" formControlName="email" />
-		<input type="password" placeholder="Password" formControlName="password" />
+		<input type="email" placeholder="Email" formControlName="loginEmail" />
+		<div class="error" *ngIf="signupForm.get('loginEmail')?.invalid && signupForm.get('loginEmail')?.touched">
+			<div *ngIf="signupForm.get('loginEmail')?.errors?.['required']">Email is required!</div>
+			<div *ngIf="signupForm.get('loginEmail')?.errors?.['email']">Invalid email format!</div>
+		  </div>
+		<input type="password" placeholder="Password" formControlName="loginPassword" />
+		<div class="error" *ngIf="signupForm.get('loginPassword')?.invalid && signupForm.get('loginPassword')?.touched">
+			<div *ngIf="signupForm.get('loginPassword')?.errors?.['loginPassword']">Password is required!</div>
+		  </div>
+
+		
   
 		<a href="#">Forgot your password?</a>
 		<button type="submit">Sign In</button>
