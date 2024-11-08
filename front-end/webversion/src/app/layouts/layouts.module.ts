@@ -6,10 +6,13 @@ import { RouterModule } from '@angular/router';
 
 
 
+
 @NgModule({
-  declarations: [],
+  declarations: [
+
+  ],
   imports: [
-    CommonModule,RouterModule
+    CommonModule,RouterModule,
   ]
 })
 export class LayoutsModule { }
