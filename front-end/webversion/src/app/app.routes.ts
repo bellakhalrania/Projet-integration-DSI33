@@ -35,7 +35,7 @@ export const routes: Routes = [
        {path:'contact',loadComponent:()=>import('./views/front/contact/contact.component').then(c=>c.ContactComponent)},
     ]}
 
- 
+ ,
 
 
     { path:'client',component:ClientComponent,children: [
