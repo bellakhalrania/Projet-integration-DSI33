@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
   signupForm!: FormGroup;
  loginEmail:string=""
  loginPassword:string=""
-name:string=""
-phone:string=""
+ name:string=""
+ phone:string=""
  address:string=""
  confirmPassword:string=""
 
@@ -28,11 +28,7 @@ phone:string=""
     this.loginForm = this.formBuilder.group({
       loginEmail: ['', [Validators.required, Validators.email]],
       loginPassword: [
-        '',
-        [
-          Validators.required,
-   
-        ]
+        '', Validators.required,
       ]
     });
 
