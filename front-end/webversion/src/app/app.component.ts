@@ -10,7 +10,7 @@ import { ContactComponent } from './views/front/contact/contact.component';
 
 
 
-import {  FormsModule} from '@angular/forms';
+
 
 
 import { ClientComponent } from './layouts/client/client.component';
@@ -19,11 +19,12 @@ import { WorckshopComponent } from './views/user/worckshop/worckshop.component';
 import { TodoListComponent } from './views/user/todo-list/todo-list.component';
 
 
-import { HttpClientModule } from '@angular/common/http';
-import { LoginuserComponent } from './layouts/loginuser/loginuser.component';
-import { BrowserModule } from '@angular/platform-browser';
+
+
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './layouts/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -33,24 +34,12 @@ import { LoginComponent } from './layouts/login/login.component';
   selector: 'app-root',
   standalone: true,
 
-  imports: [ RouterOutlet,
-    AdminFrontComponent,
-    UserfrontComponent,
-    HomeComponent,
-    HttpClientModule,
-  CommonModule,
-    LoginuserComponent,
-    LoginComponent,
-    AboutComponent,
-   // ReactiveFormsModule,
-    EventsComponent,
-    ContactComponent,
-    ClientComponent,
-    GroupsComponent,
-    WorckshopComponent,
-    TodoListComponent,
-    FormsModule,
-  ],
+
+  imports: [RouterOutlet,AdminFrontComponent,CommonModule, HttpClientModule,
+    UserfrontComponent,HomeComponent,LoginComponent,
+    AboutComponent,EventsComponent,ContactComponent,
+    ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent],
+
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
