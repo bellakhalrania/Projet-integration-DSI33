@@ -53,7 +53,7 @@ export const routes: Routes = [
     
 
     ,{path:'admin',component:AdminFrontComponent},
-    {path:'login',component:LoginuserComponent},
+   
     {path:'login',component:LoginComponent},
    // {path:'signin',component:SigninComponentComponent}
 

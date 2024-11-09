@@ -26,6 +26,7 @@
           "color: color-mix(in srgb, var(--default-color), transparent 40%)"
         ]
       }
-    ]
+    ],
+    "no-inline-styles": "off"
   }
 }
