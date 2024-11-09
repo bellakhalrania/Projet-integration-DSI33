@@ -18,6 +18,7 @@ import { ContactComponent } from './views/front/contact/contact.component';
 
 
 import { ClientComponent } from './layouts/client/client.component';
+import { LoginuserComponent } from './layouts/loginuser/loginuser.component';
 
 
 
@@ -51,7 +52,10 @@ export const routes: Routes = [
 
     
 
-    ,{path:'admin',component:AdminFrontComponent},{path:'login',component:LoginComponent}
+    ,{path:'admin',component:AdminFrontComponent},
+   
+    {path:'login',component:LoginComponent},
+   // {path:'signin',component:SigninComponentComponent}
 
 
 ];
