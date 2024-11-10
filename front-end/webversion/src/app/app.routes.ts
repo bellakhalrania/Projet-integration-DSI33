@@ -1,8 +1,7 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminFrontComponent } from './layouts/admin-front/admin-front.component';
 import { UserfrontComponent } from './layouts/userfront/userfront.component';
-
 import { LoginComponent } from './layouts/login/login.component';
 
 
@@ -18,6 +17,7 @@ import { ContactComponent } from './views/front/contact/contact.component';
 
 
 import { ClientComponent } from './layouts/client/client.component';
+import { ResetpasswordComponent } from './layouts/resetpassword/resetpassword.component';
 
 
 
@@ -34,7 +34,7 @@ export const routes: Routes = [
        {path:'events',loadComponent:()=>import('./views/front/events/events.component').then(c=>c.EventsComponent)},
        {path:'contact',loadComponent:()=>import('./views/front/contact/contact.component').then(c=>c.ContactComponent)},
     ]}
-
+,
  
 
 
@@ -51,7 +51,9 @@ export const routes: Routes = [
 
     
 
-    ,{path:'admin',component:AdminFrontComponent},{path:'login',component:LoginComponent}
+    ,{path:'admin',component:AdminFrontComponent},
+    {path:'login',component:LoginComponent},
+    {path:'forgotpassword',component:ResetpasswordComponent}
 
 
 ];
