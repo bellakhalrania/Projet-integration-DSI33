@@ -1,77 +1,98 @@
-<div class="bb">
-    <div id="main-wrapper" class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-10">
-                <div class="card border-0 cc">
-                    <div class="card-body p-0">
-                        <div class="row no-gutters">
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="mb-5">
-                                        <h3 class="h4 font-weight-bold text-theme log">Login</h3>
-                                    </div>
+<div class="container" id="container">
+	<div class="form-container sign-up-container su">
+	  <form [formGroup]="signupForm" #f="ngForm" (ngSubmit)="register(f)">
+		<h1>Create Account</h1>
+		<div class="social-container">
+		  <a href="#" class="socialf fac"><i class="fab fa-facebook-f"></i></a>
+		  <a href="#" class="socialg goo"><i class="fab fa-google-plus-g"></i></a>
+		</div>
+		<br>
+		<span>or use your email for registration</span>
+		<input type="text" placeholder="Name" formControlName="name"  />
+		<div class="error" *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+			<br>
+		  <div class="perreur" *ngIf="signupForm.get('name')?.errors?.['required']"> <i class="bi bi-exclamation-octagon"></i> Name is required!</div>
+		</div>
+		<input type="text" placeholder="Username" formControlName="username"  />
+		<div class="error" *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched">
+		  <div class="perreur" *ngIf="signupForm.get('username')?.errors?.['required']"> <i class="bi bi-exclamation-octagon"></i> Username is required!</div>
+		</div>
+  
+		<input type="email" placeholder="Email" formControlName="email"  />
+		<div class="error" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+		  <div class="perreur" *ngIf="signupForm.get('email')?.errors?.['required']"> <i class="bi bi-exclamation-octagon"></i> Email is required!</div>
+		  <div  class="perreur"*ngIf="signupForm.get('email')?.errors?.['email']"> <i class="bi bi-exclamation-octagon"></i> Invalid email format!</div>
+		</div>
+  
+		<input type="password" placeholder="Password" formControlName="password" />
+		<div class="error" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched"  ngModel>
+		  <div class="perreur" *ngIf="signupForm.get('password')?.errors?.['required']"> <i class="bi bi-exclamation-octagon"></i> Password is required!</div>
+		  <div  class="perreur"*ngIf="signupForm.get('password')?.errors?.['pattern']"><i class="bi bi-exclamation-octagon"></i> 
+			Password must be at least 8 characters, include one uppercase letter, one lowercase letter, and one number.
+		  </div>
+		</div>
+  
+		<input  type="password" placeholder="Confirm password" formControlName="confirmPassword" />
+		<div class="error" *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched">
+		  <div class="perreur" *ngIf="signupForm.get('confirmPassword')?.errors?.['required']"><i class="bi bi-exclamation-octagon"></i> Password confirmation is required!</div>
+		  <div  class="perreur" *ngIf="signupForm.hasError('matching')"> <i class="bi bi-exclamation-octagon"></i> Passwords do not match!</div>
+		</div>
+  
+		<input type="text" placeholder="Address" formControlName="address" />
+		<div class="error" *ngIf="signupForm.get('address')?.invalid && signupForm.get('address')?.touched">
+			<div class="perreur" *ngIf="signupForm.get('address')?.errors?.['required']"> <i class="bi bi-exclamation-octagon"></i> Address is required!</div>
+		  </div>
+		<input type="text" placeholder="Phone" formControlName="phone" />
+		<div class="error" *ngIf="signupForm.get('phone')?.invalid && signupForm.get('phone')?.touched">
+			<div  class="perreur" *ngIf="signupForm.get('phone')?.errors?.['required']"> <i class="bi bi-exclamation-octagon"></i> Phone is required!</div>
+			<div  class="perreur" *ngIf="signupForm.get('phone')?.errors?.['pattern']"> <i class="bi bi-exclamation-octagon"></i> You should entrer numbers </div>
 
-                                    <h6 class="h5 mb-0">Welcome back!</h6>
-                                    <br />
-                                    <form [formGroup]="loginForm" >
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">
-                                                <span><i class="bi bi-envelope"></i></span> Email address
-                                            </label>
-                                            <input
-                                                type="email"
-                                                class="form-control"
-                                                id="exampleInputEmail1"
-                                                formControlName="email"
-                                            />
-                                            <div class="error" *ngIf="loginForm.controls['email'].invalid && !loginForm.controls['email'].pristine">
-                                                <div *ngIf="loginForm.controls['email'].errors?.['required']">
-                                                    Email is required!
-                                                </div>
-                                                <div *ngIf="loginForm.controls['email'].errors?.['email']">
-                                                    Invalid email format!
-                                                </div>
-                                            </div>
-                                        </div>
+		  </div>
+		  <br>
+		<div class="button">
+		  <button type="submit" > <i class="bi bi-box-arrow-in-right"></i>  Sign Up</button>  <span>  </span> 
+		  <button type="reset"  (click)="clearform()"> <i class="bi bi-trash-fill"></i> Clear</button>
+		</div>
+	  </form>
+	</div>
 
-                                        <div class="form-group mb-5">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input
-                                                type="password"
-                                                class="form-control"
-                                                id="exampleInputPassword1"
-                                                formControlName="password"
-                                            />
-                                            <div class="error" *ngIf="loginForm.controls['password'].invalid && !loginForm.controls['password'].pristine">
-                                                <div *ngIf="loginForm.controls['password'].errors?.['required']">
-                                                    Password is required!
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="button" [disabled]="loginForm.invalid">
-                                            <span><i class="bi bi-box-arrow-in-right"></i></span> Login
-                                        </button>
-
-                                        <a href="#l" class="forgot-link float-right text-primary fp">Forgot password?</a>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 d-none d-lg-inline-block">
-                                <div class="account-block rounded-right">
-                                    <div class="overlay rounded-right"></div>
-                                    <div class="account-testimonial"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="text-muted text-center mt-3 mb-0 forget">
-                    Don't have an account?
-                    <a href="" class="text-primary ml-1 reg">register</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+	<div class="form-container sign-in-container">
+	  <form [formGroup]="loginForm" >
+		<h1>Sign in</h1>
+		<div class="social-container">
+		  <a href="#" class="social fac"><i class="fab fa-facebook-f"></i></a>
+		  <a href="#" class="social goo"><i class="fab fa-google-plus-g"></i></a>
+		</div>
+		<span>or use your account</span>
+  
+		<input type="email" placeholder="Email" formControlName="loginEmail" />
+		<div class="error" *ngIf="loginForm.get('loginEmail')?.invalid && loginForm.get('loginEmail')?.touched">
+			<div class="perreur" *ngIf="loginForm.get('loginEmail')?.errors?.['required']"> <i class="bi bi-exclamation-octagon"></i> Email is required!</div>
+			<div class="perreur" *ngIf="loginForm.get('loginEmail')?.errors?.['email']"> <i class="bi bi-exclamation-octagon"></i> Invalid email format!</div>
+		  </div>
+		<input type="password" placeholder="Password" formControlName="loginPassword" />
+		<div class="error" *ngIf="loginForm.get('loginPassword')?.invalid && loginForm.get('loginPassword')?.touched">
+			<div class="perreur" *ngIf="loginForm.get('loginPassword')?.errors?.['required']"> <i class="bi bi-exclamation-octagon"></i> Password is required!</div>
+		  </div>
+		<a href="#">Forgot your password?</a>
+		<button type="submit"> <i class="bi bi-box-arrow-in-right"></i> Sign In</button>
+	  </form>
+	</div>
+  
+	<div class="overlay-container">
+	  <div class="overlay">
+		<div class="overlay-panel overlay-left">
+		  <h1>Welcome Back!</h1>
+		  <p>We are glad to see you here</p>
+		  <button class="ghost" id="signIn">Sign In</button>
+		</div>
+		<div class="overlay-panel overlay-right">
+			<img [src]="'assets/pictures/Animation - 1731077223081 (1).gif'" width="150px" height="auto" alt="animation">
+			<h1>A step closer to self-care</h1>
+		  <p>Create an account & take a step toward self-care</p>
+		  <button class="ghost" id="signUp"> <i class="bi bi-box-arrow-in-right"></i> Sign Up</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  

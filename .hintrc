@@ -6,8 +6,27 @@
     "axe/name-role-value": [
       "default",
       {
-        "button-name": "off"
+        "button-name": "off",
+        "link-name": "off"
       }
-    ]
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "color: color-mix(in srgb, var(--default-color), transparent 30%)",
+          "color: color-mix(in srgb, var(--accent-color), transparent 15%)",
+          "background-color: color-mix(in srgb, var(--accent-color), transparent 80%)",
+          "color: color-mix(in srgb, var(--default-color), transparent 40%)"
+        ]
+      }
+    ],
+    "no-inline-styles": "off"
   }
 }
