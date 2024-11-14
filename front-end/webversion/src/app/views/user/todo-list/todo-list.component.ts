@@ -1,6 +1,7 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NavbarClientComponent } from '../navbar-client/navbar-client.component';
 
 
 interface Task{
@@ -16,7 +17,8 @@ interface Task{
     FormsModule,
     NgFor,
     NgIf,
-    NgClass
+    NgClass,
+    NavbarClientComponent,
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css'
