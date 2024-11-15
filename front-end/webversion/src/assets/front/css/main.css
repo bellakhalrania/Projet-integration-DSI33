@@ -662,7 +662,7 @@ svg {
 --------------------------------------------------------------*/
 
 
-/* Styles pour l'animation de l'image */
+ /*Styles pour l'animation de l'image */
 .animated-brain {
   position: fixed; 
   bottom: 50px; 
@@ -691,7 +691,20 @@ svg {
   100% {
       transform: translateY(-10px); 
   }
+}/*
+.bus {
+  height: 70px;
+  width: 70px;
+ 
+  animation: xAxis 5s infinite ease-in;
 }
+
+@keyframes xAxis {
+  100% {
+    animation-timing-function: ease-in;
+    transform: translateX(1450px);
+  }
+}*/
 
 
 
@@ -1162,7 +1175,7 @@ section,
 
 /*--------------------------------------------------------------
 # Featured Services Section
---------------------------------------------------------------*/
+--------------------------------------------------------------*//*
 .featured-services {
   padding: 40px 0;
 }
@@ -1217,7 +1230,7 @@ section,
 .featured-services .service-item:hover .icon i {
   color: var(--contrast-color);
 }
-
+*/
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -1288,6 +1301,8 @@ section,
 
 .about .about-images img {
   border-radius: 10px;
+  width: 550px;
+  height:400px;
 }
 
 /*--------------------------------------------------------------
@@ -2139,3 +2154,8 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+/*--------------------------------------------------------------
+# Dashbord
+--------------------------------------------------------------*/

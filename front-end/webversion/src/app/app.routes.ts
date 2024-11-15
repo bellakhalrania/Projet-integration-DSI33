@@ -9,10 +9,6 @@ import { LoginComponent } from './layouts/login/login.component';
 
 import { HomeComponent } from './views/front/home/home.component';
 import { AboutComponent } from './views/front/about/about.component';
-
-import { EventsComponent } from './views/front/events/events.component';
-
-
 import { ContactComponent } from './views/front/contact/contact.component';
 
 
@@ -32,7 +28,6 @@ export const routes: Routes = [
     { path:'',component:UserfrontComponent,children: [
        {path:'',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
        {path:'about',loadComponent:()=>import('./views/front/about/about.component').then(c=>c.AboutComponent)},
-       {path:'events',loadComponent:()=>import('./views/front/events/events.component').then(c=>c.EventsComponent)},
        {path:'contact',loadComponent:()=>import('./views/front/contact/contact.component').then(c=>c.ContactComponent)},
     ]}
 
