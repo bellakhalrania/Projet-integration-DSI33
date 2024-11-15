@@ -5,7 +5,6 @@ import { UserfrontComponent } from './layouts/userfront/userfront.component';
 
 import { HomeComponent } from './views/front/home/home.component';
 import { AboutComponent } from './views/front/about/about.component';
-import { EventsComponent } from './views/front/events/events.component';
 import { ContactComponent } from './views/front/contact/contact.component';
 
 
@@ -37,7 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
 
   imports: [RouterOutlet,AdminFrontComponent,CommonModule, HttpClientModule,
     UserfrontComponent,HomeComponent,LoginComponent,
-    AboutComponent,EventsComponent,ContactComponent,
+    AboutComponent,ContactComponent,
     ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent],
 
   templateUrl: './app.component.html',
