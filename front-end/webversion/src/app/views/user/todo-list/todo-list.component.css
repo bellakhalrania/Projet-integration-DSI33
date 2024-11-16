@@ -1,8 +1,47 @@
 
 
 body {
-  background-color: rgba(225, 230, 232, 0.319);
+ padding: 0%;
+ margin: 0%;
+  
 }
+.hero-bg {
+  position: fixed; /* Assure que l'image reste fixe et pleine largeur/hauteur */
+  top: 0;
+  margin: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1; /* Derrière tous les autres éléments */
+}
+.hero-bg img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.btntasks-completed, .filtrer, .cadre, .task-list {
+  position: relative; /* Permet de les placer au-dessus de l'image */
+  z-index: 1; /* Superpose les éléments au-dessus de l'image */
+}
+
+.cadre{
+ 
+  margin-bottom: 14px;
+  margin-left: 150px;
+  margin-right: 150px;
+   background-color: rgba(249, 245, 249, 0.879);
+  border-radius: 10px;
+   max-width:  1200px; 
+   height: 160px;
+   border: 1px solid rgba(216, 210, 210, 0.319);
+   box-shadow: 0 4px 8px 0 rgba(224, 221, 221, 0.2), 0 6px 20px 0 rgba(219, 199, 185, 0.438);
+  
+  
+  }
 .btntasks-completed{
   border-radius: 10px;
   border: 2px solid rgba(0, 0, 0, 0.319);
@@ -25,6 +64,7 @@ body {
   border-radius: 10px;
   border: 2px solid rgba(0, 0, 0, 0.319);
   margin-top: 140px;
+  margin-bottom: 10px;
   margin-left: 200px;
   background-color: rgb(244, 240, 240);
   color: rgb(91, 88, 88);
@@ -35,18 +75,7 @@ body {
 } 
 
   
-.cadre{
-margin-top: 14px;
-margin-bottom: 14px;
-margin-left: 150px;
-margin-right: 150px;
- background-color: rgba(161, 223, 221, 0.879);
-border-radius: 10px;
- max-width:  1200px; 
- height: 160px;
- border: 1px solid rgba(0, 0, 0, 0.319);
 
-}
 input{
  margin-left: 20px;
  margin-right: 20px;

@@ -35,8 +35,7 @@ startTime: string = '';
 tasks: Task[]=[];
 isAvalible :boolean = false;
 
-currentPage: number = 1;
-tasksPerPage: number = 5;
+
 
   addTask():void{
     if(this.taskName.trim() && this.startDate && this.startTime){
