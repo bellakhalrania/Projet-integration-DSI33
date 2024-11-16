@@ -23,6 +23,7 @@ import { TodoListComponent } from './views/user/todo-list/todo-list.component';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './layouts/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ExercicesComponent } from './views/user/exercices/exercices.component';
 
 
 
@@ -37,7 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [RouterOutlet,AdminFrontComponent,CommonModule, HttpClientModule,
     UserfrontComponent,HomeComponent,LoginComponent,
     AboutComponent,ContactComponent,
-    ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent],
+    ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent,ExercicesComponent],
 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

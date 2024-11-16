@@ -42,7 +42,7 @@ export const routes: Routes = [
         {path:'groups',loadComponent:()=>import('./views/user/groups/groups.component').then(c=>c.GroupsComponent)},
         {path:'worckshop',loadComponent:()=>import('./views/user/worckshop/worckshop.component').then(c=>c.WorckshopComponent)},
         {path:'todo-list',loadComponent:()=>import('./views/user/todo-list/todo-list.component').then(c=>c.TodoListComponent)},
-
+        {path:'exercices',loadComponent:()=>import('./views/user/exercices/exercices.component').then(c=>c.ExercicesComponent)},
         ]}
 
     
