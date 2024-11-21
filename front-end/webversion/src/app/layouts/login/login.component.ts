@@ -3,34 +3,29 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { CommonModule } from '@angular/common';
 import Validation from '../../../utils/validation';
 import { Router, RouterModule } from '@angular/router';
-
+import { SocialLoginModule } from 'angularx-social-login';
+declare const google: any;
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule,RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, SocialLoginModule ],
+
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   signupForm!: FormGroup;
- loginEmail:string=""
- loginPassword:string=""
- name:string=""
- phone:string=""
- address:string=""
- confirmPassword:string=""
 
-
-  constructor(private formBuilder: FormBuilder,private router: Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       loginEmail: ['', [Validators.required, Validators.email]],
-      loginPassword: [
-        '', Validators.required,
-      ]
+      loginPassword: ['', Validators.required],
     });
 
     this.signupForm = this.formBuilder.group(
@@ -45,17 +40,20 @@ export class LoginComponent implements OnInit {
           [
             Validators.required,
             Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/),
-            Validators.maxLength(10)
-          ]
+            Validators.maxLength(10),
+          ],
         ],
-        confirmPassword: ['', Validators.required]
+        confirmPassword: ['', Validators.required],
       },
       {
-        validators: [Validation.match('password', 'confirmPassword')]
+        validators: [Validation.match('password', 'confirmPassword')],
       }
     );
   }
+
   clearform(): void {
     this.signupForm.reset();
   }
+
+ 
 }

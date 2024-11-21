@@ -4,8 +4,7 @@
 		<h1>Create Account</h1>
 		<div class="social-container">
 		  <a href="#" class="socialf fac"><i class="bi bi-facebook"></i></a>
-		  <a href="#" class="socialg goo"><i class="bi bi-google"></i></a>
-		</div>
+				</div>
 		<br>
 		<span>or use your email for registration</span>
   
@@ -63,8 +62,22 @@
 		<h1>Sign in</h1>
 		<div class="social-container">
 		  <a href="#" class="social fac"><i class="bi bi-facebook"></i></a>
-		  <a href="#" class="social goo"><i class="bi bi-google"></i></a>
-		</div>
+		  <div id="g_id_onload"
+		  data-client_id="468043697793-5a5c9mklegsoqm4ofm419av2rbqbqj3e.apps.googleusercontent.com"
+		  data-context="signin"
+		  data-ux_mode="popup"
+		  data-login_uri="http://localhost:3000/api/login"
+		  data-auto_prompt="false">
+	 </div>
+	 
+	 <div class="g_id_signin"
+		  data-type="standard"
+		  data-shape="pill"
+		  data-theme="filled_blue"
+		  data-text="signin_with"
+		  data-size="large"
+		  data-logo_alignment="left">
+	 </div>		</div>
 		<span>or use your account</span>
   
 		<input type="email" placeholder="Email" formControlName="loginEmail" />
