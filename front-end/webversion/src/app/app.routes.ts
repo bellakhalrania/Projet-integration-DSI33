@@ -18,7 +18,9 @@ import { ContactComponent } from './views/front/contact/contact.component';
 
 
 import { ClientComponent } from './layouts/client/client.component';
-import { LoginuserComponent } from './layouts/loginuser/loginuser.component';
+import { UserloginComponent } from './userlogin/userlogin.component';
+import { UserregisterComponent } from './userregister/userregister.component';
+
 
 
 
@@ -52,10 +54,10 @@ export const routes: Routes = [
 
     
 
-    ,{path:'admin',component:AdminFrontComponent},
+    ,{path:'admin',component:AdminFrontComponent}
+    ,{path:'login',component:UserloginComponent}
+    ,{path:'register',component:UserregisterComponent}
    
-    {path:'login',component:LoginComponent},
-   // {path:'signin',component:SigninComponentComponent}
 
 
 ];

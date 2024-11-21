@@ -1,0 +1,41 @@
+<div class="wrapper" >
+    <div class="inner">
+
+        <div class="image-holder">
+            <img [src]="'assets/pictures/Animation - 1731077223081 (1).gif'" width="150px" height="auto" alt="animation">
+            <h1>A step closer to self-care</h1>
+		  <p>Create an account & take a step toward self-care</p>
+		  
+        </div>
+        <form #f="ngForm" (ngSubmit)="loginUser(f)" >
+            <h3>Connexion !</h3>
+            
+            <div class="form-wrapper">
+                <input type="text" placeholder="Email Address" class="form-control"name="email" #email="ngModel" ngModel>
+                <i class="zmdi zmdi-email"></i>
+            </div>
+           
+            <div class="form-wrapper">
+                <input type="password" placeholder="Password" class="form-control" name="password" #password="ngModel" ngModel>
+                <i class="zmdi zmdi-lock"></i>
+            </div>
+            
+            <button type="submit">Entrer
+                <i class="zmdi zmdi-arrow-right"></i>
+            </button>
+           
+            <div class="alert alert-danger" *ngIf="messageErr">
+                {{messageErr}}
+            </div>
+            <div class="text-center mt-3">
+                <p>Vous n'avez pas de compte ? <a routerLink="/register" >Inscrivez-vous ici</a>.</p>
+                <p> <a routerLink="/register" >annuler?</a></p>
+            </div>
+            
+        </form>
+        
+    </div>
+
+
+
+
