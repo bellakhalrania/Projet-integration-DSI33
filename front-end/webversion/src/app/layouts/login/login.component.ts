@@ -1,27 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormGroupDirective, FormsModule, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import Validation from '../../../utils/validation';
+
 import { Router, RouterModule } from '@angular/router';
 import { SocialLoginModule } from 'angularx-social-login';
 declare const google: any;
 
+import { AuthloginService } from '../../services/authlogin.service';
+import { HttpErrorResponse } from '@angular/common/http';
+
+
+
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, SocialLoginModule ],
 
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, SocialLoginModule ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  messageErr="";
+
+
   loginForm!: FormGroup;
   signupForm!: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,  ) {}
 
+ 
+
+  constructor(private ds:AuthloginService,private formBuilder: FormBuilder) {}
+
+  register(f:any){
+    let data=f.value
+  //console.log(data)
+  this.ds.registeruser(data).subscribe(response=>{
+    //console.log(response)
+   // this.route.navigate(['loginuser'])
+    
+  },(err:HttpErrorResponse)=>{
+    this.messageErr=err.error
+    //console.log(err.error)
+    
+  })
+  }
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       loginEmail: ['', [Validators.required, Validators.email]],

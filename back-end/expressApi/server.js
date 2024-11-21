@@ -1,8 +1,14 @@
 const express = require('express');
-
 const userRoute=require('./routers/user.router')
+
+const cors = require('cors');
 const app = express();
+
 const port=3000;
+
+// Middleware de gestion des CORS
+app.use(cors());
+
 
 // Middleware de traitement des requêtes JSON et URL encodées
 app.use(express.json());

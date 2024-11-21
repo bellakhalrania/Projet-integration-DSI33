@@ -1,0 +1,48 @@
+<div class="wrapper">
+    <div class="inner">
+        <div class="image-holder">
+            <h1>Welcome Back!</h1>
+            <p>We are glad to see you here</p>
+            <img src="assets/front/img/about.gif" class="img-fluid hero-img" alt=""  >
+        </div>
+        <form #f="ngForm" (ngSubmit)="register(f)" >
+            <h3>Registration Form</h3>
+            <div class="form-group">
+                <input type="text" placeholder="First Name" class="form-control"name="name" #name="ngModel" ngModel>
+                <input type="text" placeholder="Last Name" class="form-control">
+            </div>
+            <div class="form-wrapper">
+                <input type="text" placeholder="Username" class="form-control"name="username" #username="ngModel" ngModel>
+                <i class="zmdi zmdi-account"></i>
+            </div>
+            <div class="form-wrapper">
+                <input type="text" placeholder="Email Address" class="form-control"name="email" #email="ngModel" ngModel>
+                <i class="zmdi zmdi-email"></i>
+            </div>
+            
+            <div class="form-wrapper">
+                <input type="password" placeholder="Password" class="form-control"name="password" #password="ngModel" ngModel>
+                <i class="zmdi zmdi-lock"></i>
+            </div>
+            <div class="form-wrapper">
+                <input type="password" placeholder="Confirm Password" class="form-control">
+                <i class="zmdi zmdi-lock"></i>
+            </div>
+            <button type="submit">Register
+                
+            </button>
+            <div class="alert alert-danger" *ngIf="messageErr">
+                {{messageErr}}
+            </div>
+            
+            <div class="text-center mt-3">
+                <p>Vous avez déja un compte ? <a routerLink="/login" >Connexion..</a>.</p>
+                <p> <a routerLink="/" >annuler?</a></p>
+            </div>
+        </form>
+        
+    </div>
+
+
+
+

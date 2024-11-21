@@ -1,0 +1,94 @@
+/* Conteneur principal de la section Why Choose Us */
+.bg-style{
+  background-image: url(../../../../assets/bijita.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.why-choose-us-section {
+    background-color: #f9f9f9; /* Optionnel, pour ajouter une couleur de fond subtile à la section */
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.5rem; /* Taille du titre */
+    margin-bottom: 20px;
+  }
+  
+  .section-text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Liste des éléments */
+  .why-choose-list {
+    list-style-type: none; /* Retirer les puces */
+    padding: 0;
+  }
+  
+  .why-choose-item {
+    background-color: #fff; /* Fond blanc pour chaque élément */
+    border: 1px solid #ddd; /* Bordure grise légère */
+    border-radius: 8px; /* Coins arrondis pour plus de douceur */
+    margin-bottom: 20px; /* Espacement entre les éléments */
+    padding: 20px; /* Espacement intérieur */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effet de transition */
+  }
+  
+  /* Effet au survol de chaque élément */
+  .why-choose-item:hover {
+    transform: translateY(-5px); /* Légère remontée au survol */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Ombre un peu plus marquée au survol */
+  }
+  
+  /* Style pour les titres en gras */
+  .why-choose-item strong {
+    color: rgb(127, 240, 255); /* Couleur rouge pour les titres */
+    font-size: 1.2rem; /* Taille plus grande pour les titres */
+  }
+  
+  /* Option responsive pour ajuster le texte sur les petits écrans */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem; /* Réduction de la taille du titre pour les petits écrans */
+    }
+  
+    .section-text {
+      font-size: 1rem; /* Réduction de la taille du texte */
+    }
+  
+    .why-choose-item {
+      padding: 15px; /* Réduire le padding pour les petits écrans */
+    }
+  }
+  /* Section Mission Style */
+  .mission-section {
+    /* Width of the section */
+    max-width: 1200px; /* Limit maximum width */
+    margin: 0 auto; /* Center the section */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2); /* More transparent (20% opaque) */
+    /*border: 2px solid #ffffff;  */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Optional: Shadow for depth */
+    backdrop-filter: blur(10px); /* Optional: Adds a background blur */
+    margin-top: 30px;
+  }
+  
+  
+  /* Styling for the section title */
+  .mission-section .section-title {
+    font-size: 2.5rem; /* Title font size */
+    color: rose; /* Red color for the title */
+    margin-bottom: 20px; /* Space below the title */
+  }
+  
+  /* Styling for the section text */
+  .mission-section .section-text {
+    font-size: 1.2rem; /* Text size */
+    color: #333; /* Dark color for the text */
+    line-height: 1.6; /* Line spacing for better readability */
+  }
+  
+  
