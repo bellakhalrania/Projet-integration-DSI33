@@ -2,16 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective, FormsModule, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import Validation from '../../../utils/validation';
+
+import { Router, RouterModule } from '@angular/router';
+import { SocialLoginModule } from 'angularx-social-login';
+declare const google: any;
+
 import { AuthloginService } from '../../services/authlogin.service';
 import { HttpErrorResponse } from '@angular/common/http';
+
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule,FormsModule ],
+
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, SocialLoginModule ],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   messageErr="";
@@ -19,13 +26,9 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
   signupForm!: FormGroup;
- loginEmail:string=""
- loginPassword:string=""
- name:string=""
- phone:string=""
- address:string=""
- confirmPassword:string=""
 
+
+ 
 
   constructor(private ds:AuthloginService,private formBuilder: FormBuilder) {}
 
@@ -42,13 +45,10 @@ export class LoginComponent implements OnInit {
     
   })
   }
-
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       loginEmail: ['', [Validators.required, Validators.email]],
-      loginPassword: [
-        '', Validators.required,
-      ]
+      loginPassword: ['', Validators.required],
     });
 
     this.signupForm = this.formBuilder.group(
@@ -63,17 +63,20 @@ export class LoginComponent implements OnInit {
           [
             Validators.required,
             Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/),
-            Validators.maxLength(10)
-          ]
+            Validators.maxLength(10),
+          ],
         ],
-        confirmPassword: ['', Validators.required]
+        confirmPassword: ['', Validators.required],
       },
       {
-        validators: [Validation.match('password', 'confirmPassword')]
+        validators: [Validation.match('password', 'confirmPassword')],
       }
     );
   }
+
   clearform(): void {
     this.signupForm.reset();
   }
+
+ 
 }
