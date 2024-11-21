@@ -1,4 +1,9 @@
 /* Conteneur principal de la section Why Choose Us */
+.bg-style{
+  background-image: url(../../../../assets/bijita.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .why-choose-us-section {
     background-color: #f9f9f9; /* Optionnel, pour ajouter une couleur de fond subtile à la section */
     padding: 40px 0;
@@ -85,4 +90,5 @@
     color: #333; /* Dark color for the text */
     line-height: 1.6; /* Line spacing for better readability */
   }
+  
   
