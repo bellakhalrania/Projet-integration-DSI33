@@ -3,7 +3,7 @@
 	  <form [formGroup]="signupForm" #f="ngForm" (ngSubmit)="register(f)">
 		<h1>Create Account</h1>
 		<div class="social-container">
-		  <a href="#" class="socialf fac"><i class="bi bi-facebook"></i></a>
+		  <a href="#"  (click)="loginWithFacebook()" class="socialf fac"><i class="bi bi-facebook"></i></a>
 				</div>
 		<br>
 		<span>or use your email for registration</span>
