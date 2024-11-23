@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HttpClientModule , provideHttpClient, withFetch} from '@angular/common/http';
+
+
+import { CommonModule } from '@angular/common';
+
+
 import { AdminFrontComponent } from './layouts/admin-front/admin-front.component';
 import { UserfrontComponent } from './layouts/userfront/userfront.component';
 
@@ -7,9 +13,6 @@ import { HomeComponent } from './views/front/home/home.component';
 import { AboutComponent } from './views/front/about/about.component';
 import { EventsComponent } from './views/front/events/events.component';
 import { ContactComponent } from './views/front/contact/contact.component';
-
-
-
 
 
 
@@ -21,9 +24,8 @@ import { TodoListComponent } from './views/user/todo-list/todo-list.component';
 
 
 
-import { CommonModule } from '@angular/common';
 import { LoginComponent } from './layouts/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -34,11 +36,24 @@ import { HttpClientModule } from '@angular/common/http';
   selector: 'app-root',
   standalone: true,
 
-
-  imports: [RouterOutlet,AdminFrontComponent,CommonModule, HttpClientModule,
-    UserfrontComponent,HomeComponent,LoginComponent,
-    AboutComponent,EventsComponent,ContactComponent,
-    ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent],
+  imports: [
+    RouterOutlet,
+    AdminFrontComponent,
+    CommonModule, 
+   
+    HttpClientModule,
+   
+ 
+    UserfrontComponent,
+    HomeComponent,
+    LoginComponent,
+    AboutComponent,
+    EventsComponent,
+    ContactComponent,
+    ClientComponent,
+    GroupsComponent,
+    WorckshopComponent,
+    TodoListComponent],
 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
