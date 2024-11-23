@@ -1,0 +1,6 @@
+<div class="result" class="card">
+    <h3>Your Score: {{ score }}</h3>
+    <p *ngIf="score < 10">You might be experiencing mild symptoms of depression. It’s recommended to talk to a healthcare provider.</p>
+    <p *ngIf="score >= 10">You might be experiencing moderate to severe symptoms of depression. Please consider seeking professional help.</p>
+  </div>
+  

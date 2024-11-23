@@ -1,6 +1,6 @@
 const express = require('express');
-
 const userRoute=require('./routers/user.router')
+
 const app = express();
 
 
