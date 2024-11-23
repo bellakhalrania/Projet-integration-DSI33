@@ -43,12 +43,18 @@ export const routes: Routes = [
         {path:'worckshop',loadComponent:()=>import('./views/user/worckshop/worckshop.component').then(c=>c.WorckshopComponent)},
         {path:'todo-list',loadComponent:()=>import('./views/user/todo-list/todo-list.component').then(c=>c.TodoListComponent)},
         {path:'exercices',loadComponent:()=>import('./views/user/exercices/exercices.component').then(c=>c.ExercicesComponent)},
+        {path:'anxiety-quiz',loadComponent:()=>import('./views/user/anxiety-quiz/anxiety-quiz.component').then(c=>c.AnxietyQuizComponent)},
+        {path:'depression-quiz',loadComponent:()=>import('./views/user/depression-quiz/depression-quiz.component').then(c=>c.DepressionQuizComponent)},
+        {path:'adhd-quiz',loadComponent:()=>import('./views/user/adhd-quiz/adhd-quiz.component').then(c=>c.AdhdQuizComponent)},
+        {path:'quiz',loadComponent:()=>import('./views/user/quiz/quiz.component').then(c=>c.QuizComponent)},
+
         ]}
 
     
 
-    ,{path:'admin',component:AdminFrontComponent},
-   
+   ,{path:'admin',component:AdminFrontComponent,children: [
+        {path:'ajouter-group',loadComponent:()=>import('./views/admin/ajouter-group/ajouter-group.component').then(c=>c.AjouterGroupComponent)},
+    ]},
     {path:'login',component:LoginComponent},
    // {path:'signin',component:SigninComponentComponent}
 

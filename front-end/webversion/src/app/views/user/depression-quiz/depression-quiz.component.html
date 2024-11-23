@@ -1,0 +1,39 @@
+<section style="background-image: url(../../../../assets/bijita.JPG);">
+<div class="commonQuiz">
+    <div class="container">
+      <h2>DEPRESSION TEST</h2>
+  
+      <!-- Afficher la question si le quiz n'est pas terminé -->
+      <div *ngIf="!isQuizOver()">
+        <div class="Quiz-question-option">
+          <h3>{{ questions[currentQuestion].question }}</h3>
+          <p>
+            <button
+              *ngFor="let answer of questions[currentQuestion].answers; let answerIndex = index"
+              class="option-btn"
+              [class.checked]="clickedOption === (answerIndex + 1)"
+              (click)="clickedOption = answerIndex + 1"
+            >
+              {{ answer }}
+            </button>
+          </p>
+          <button (click)="changeQuestion()" id="next-button" [disabled]="clickedOption === 0">
+            Next
+          </button>
+        </div>
+      </div>
+  
+      <!-- Affichage du résultat une fois le quiz terminé -->
+      <div *ngIf="isQuizOver()">
+        <h2 class="result-heading">Result</h2>
+        <h3 class="score">{{ score }}</h3>
+  
+        <div *ngIf="score > 1">
+          <app-depression-result [score]="score"></app-depression-result>
+        </div>
+  
+        <button (click)="handleResetClick()" id="retake-button" class="button">Restart Quiz</button>
+      </div>
+    </div>
+  </div>
+</section>

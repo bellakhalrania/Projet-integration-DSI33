@@ -1,0 +1,43 @@
+<section style="background-image: url(../../../../assets/bijita.JPG);">
+<div class="commonQuiz">
+    <div class="container">
+      <h2>ANXIETY TEST</h2>
+      <div *ngIf="!isQuizOver()">
+        <div class="Quiz-question-option">
+          <h3>{{ questions[currentQuestion].question }}</h3>
+          <p>
+            <button 
+              *ngFor="let answer of questions[currentQuestion].answers; let answerIndex = index" 
+              class="option-btn" 
+              [class.checked]="clickedOption === answerIndex + 1" 
+              (click)="clickedOption = answerIndex + 1">
+              {{ answer }}
+            </button>
+          </p>
+          <input 
+            type="button" 
+            value="Next" 
+            id="next-button" 
+            (click)="changeQuestion()">
+        </div>
+      </div>
+  
+      <div *ngIf="isQuizOver()">
+        <h2 class="result-heading">Result</h2>
+        <h3 class="score">{{ score }}</h3> <!-- Afficher le score ici -->
+        <div *ngIf="score > 1">
+          <app-anxiety-result [score]="score"></app-anxiety-result>
+        </div>
+        <button (click)="handleResetClick()" class="button">Restart Quiz</button>
+      </div>
+  
+      <!-- Ajouter un affichage temporaire de l'état pour débogage -->
+      <!--div>
+        <p>Current Question Index: {{ currentQuestion }}</p>
+        <p>Current Score: {{ score }}</p>
+        <p>Clicked Option: {{ clickedOption }}</p>
+        <p>Quiz Over: {{ isQuizOver() }}</p>
+      </div-->
+    </div>
+  </div>
+</section>
