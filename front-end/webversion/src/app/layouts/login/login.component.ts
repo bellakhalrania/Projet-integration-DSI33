@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective, FormsModule, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import Validation from '../../../utils/validation';
+import { AuthService } from '../../services/auth.service';
 
 import { Router, RouterModule } from '@angular/router';
-import { SocialLoginModule } from 'angularx-social-login';
 declare const google: any;
 
 import { AuthloginService } from '../../services/authlogin.service';
@@ -16,7 +16,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   selector: 'app-login',
   standalone: true,
 
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, SocialLoginModule ],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
  
 
-  constructor(private ds:AuthloginService,private formBuilder: FormBuilder) {}
+  constructor(private ds:AuthloginService,private formBuilder: FormBuilder,private authService: AuthService) {}
 
   register(f:any){
     let data=f.value
@@ -77,6 +77,8 @@ export class LoginComponent implements OnInit {
   clearform(): void {
     this.signupForm.reset();
   }
-
+  loginWithFacebook() {
+    this.authService.loginWithFacebook();
+}
  
 }

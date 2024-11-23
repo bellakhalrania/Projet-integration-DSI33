@@ -49,8 +49,9 @@ export const routes: Routes = [
     
 
     ,{path:'admin',component:AdminFrontComponent},
-    {path:'login',component:LoginComponent},
-    {path:'forgotpassword',component:ResetpasswordComponent}
+    //{path:'login',component:LoginComponent},
+    {path:"login",component:UserloginComponent},
+    {path:"register",component:UserregisterComponent}
 
 
 ];

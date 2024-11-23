@@ -28,16 +28,31 @@
                 <input type="password" placeholder="Confirm Password" class="form-control">
                 <i class="zmdi zmdi-lock"></i>
             </div>
-            <button type="submit">Register
-                
-            </button>
+            <button type="submit">Register</button>
+            <hr>
+            <div id="g_id_onload"
+     data-client_id="468043697793-5a5c9mklegsoqm4ofm419av2rbqbqj3e.apps.googleusercontent.com"
+     data-context="signup"
+     data-ux_mode="popup"
+     data-login_uri="http://localhost:3000/api/login"
+     data-auto_prompt="false">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="filled_blue"
+     data-text="signup_with"
+     data-size="large"
+     data-locale="en"
+     data-logo_alignment="left">
+</div>
             <div class="alert alert-danger" *ngIf="messageErr">
                 {{messageErr}}
             </div>
             
             <div class="text-center mt-3">
-                <p>Vous avez déja un compte ? <a routerLink="/login" >Connexion..</a>.</p>
-                <p> <a routerLink="/" >annuler?</a></p>
+                <p>Already have an account? <a routerLink="/login" >Login</a></p>
             </div>
         </form>
         
