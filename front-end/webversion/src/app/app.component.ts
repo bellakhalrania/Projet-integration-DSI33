@@ -15,6 +15,14 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 
 
 
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './layouts/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AjouterGroupComponent } from './views/admin/ajouter-group/ajouter-group.component';
+
+
+
+
 
 
 
@@ -25,13 +33,17 @@ import { UserloginComponent } from './userlogin/userlogin.component';
   standalone: true,
 
 
-  imports: [RouterOutlet,HttpClientModule,AdminFrontComponent,
-    CommonModule,UserregisterComponent,UserloginComponent,
-    UserfrontComponent,HomeComponent,  AboutComponent,
-    ReactiveFormsModule,
+<
+  imports: [RouterOutlet,AdminFrontComponent,CommonModule, HttpClientModule,
+    UserfrontComponent,HomeComponent,LoginComponent,
+    AboutComponent,ContactComponent,
+    ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent,AjouterGroupComponent],
+
+
    
   ],
     providers: [AuthloginService,],
+
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,261 @@
+
+/* quiz menu CSS */
+
+.Quiz .quiz-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  
+}
+
+.Quiz .card {
+  flex: 0 1 calc(20% - 10px);
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  max-width: none;
+  width: 100%;
+  height: 50%;
+  background-color: #ffffff;
+  margin-left: 5em;
+  margin-right: 3em;
+  margin-top: 5em;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;       /* Centre verticalement */           /* Utilise toute la hauteur de la fenêtre */
+  text-align: center; 
+}
+
+.card-image img {
+  width: 100%;
+  height: 20%;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.Quiz .card-content button {
+  font-size: 1.25em;
+  box-shadow: 2px 2px 4px rgba(255, 132, 132, 0.2);
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.Quiz .card-content button:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 4px 6px rgba(215, 66, 66, 0.4);
+  cursor: alias;
+}
+
+.Quiz .card-content h2 {
+  text-decoration: underline;
+  font-size: 1.75em;
+}
+.Quiz .end-note {
+  margin-top: 2.5em;
+  text-align: center;
+  color: red;
+  font-size: 1.25em;
+  margin-bottom: 50px;
+}
+
+.commonQuiz h2 {
+  text-decoration: underline;
+  margin-bottom: 1em;
+}
+
+.commonQuiz h3 {
+  font-size: 1.75em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.commonQuiz p {
+  margin-bottom: 3em;
+}
+
+.commonQuiz .container {
+  margin-top: 2%;
+  margin-bottom: 5%;
+  align-items: center;
+  min-height: 100%;
+  width: 80%;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 40px;
+
+  margin-left: 10%;
+  height: 70%;
+  
+}
+
+.commonQuiz .option-btn {
+  font-size: 1em;
+  box-shadow: 0px 0px 6px 1px rgb(26, 24, 24);
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+  margin: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  opacity: 0.7;
+}
+
+.commonQuiz .option-btn.checked,
+.commonQuiz .option-btn:hover {
+  background-color: rgb(190, 217, 227);
+  color: rgb(255, 255, 255);
+  box-shadow: 4px 4px 6px 2px rgb(78, 69, 78);
+}
+
+.commonQuiz .option-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+}
+
+#next-button {
+  padding: 10px;
+  border: none;
+  background-color: rgb(38, 165, 212);
+  background-color: #276272;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px 1px rgb(127, 109, 109);
+  font-size: larger;
+  font-weight: bold;
+  transition: 0.2s;
+  width: 20%;
+  left: 30px;
+  margin-left: 80%;
+  bottom: 15px;
+}
+
+#next-button:active {
+  box-shadow: none;
+}
+#retake-button {
+  align-items: center;
+}
+
+#submit-button {
+  display: none;
+}
+
+.commonQuiz .button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 26px;
+  background-color: #276272;
+  color: #fbfbfb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 40%;
+}
+
+.commonQuiz .score {
+  font-size: 5em;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.show-score p {
+  font-size: 2em;
+}
+
+.commonQuiz .result-heading {
+  font-size: 3em;
+}
+
+.createPostPage {
+  width: 100%;
+  height: auto;
+  display: grid;
+  place-items: center;
+}
+
+.createPostPage .cpContainer {
+  margin-top: 4em;
+  margin-bottom: 4em;
+  width: 70%;
+  height: auto;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(81, 80, 80);
+}
+
+.createPostPage .cpContainer h1 {
+  margin-top: 2%;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.createPostPage .cpContainer label {
+  margin-top: 2%;
+  font-size: 2em;
+  color: #000000;
+}
+
+.createPostPage .cpContainer .inputGp {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.createPostPage .inputGp input,
+.createPostPage .inputGp textarea {
+  font-size: 2em;
+  opacity: 0.7;
+  padding: 7px;
+}
+
+.createPostPage .inputGp textarea {
+  font-size: 2em;
+  height: 250px;
+}
+
+.createPostPage .cpContainer button {
+  padding: 10px;
+  border: none;
+  background-color: rgb(38, 165, 212);
+  background-color: #276272;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.5em;
+  font-weight: bold;
+  transition: 0.2s;
+  width: 60%;
+  left: 30px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 20%;
+  bottom: 15px;
+}
+
+.createPostPage input,
+.createPostPage textarea {
+  margin-top: 5px;
+}
