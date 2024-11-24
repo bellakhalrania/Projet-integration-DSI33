@@ -31,7 +31,7 @@ input, textarea, select, button {
       background-repeat: no-repeat;
       display: flex;
       align-items: center;
-      background: linear-gradient(135deg, rgb(201, 221, 255), rgb(218, 168, 87)); }
+      background: linear-gradient(45deg,#f4f5f6, var(--accent-color)); }
 
 
 
@@ -177,17 +177,18 @@ input, textarea, select, button {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(45deg, #4CAF50, #2E8B57); /* Couleurs dégradées */
+            color: var(--contrast-color);
+            background: var(--accent-color); /* Couleurs dégradées */
             font-size: 16px;
             font-family: "Poppins-SemiBold", sans-serif;
-            color: #fff;
+            
             border-radius: 25px; /* Bords arrondis */
             transition: all 0.3s ease; /* Animation fluide */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre élégante */
           }
           
           button[type="submit"]:hover {
-            background: linear-gradient(45deg, #2E8B57, #4CAF50); /* Inverse le dégradé */
+            background: linear-gradient(45deg, var(--accent-color), #93b7e6); /* Inverse le dégradé */
             transform: scale(1.05); /* Légère augmentation de taille */
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée */
           }

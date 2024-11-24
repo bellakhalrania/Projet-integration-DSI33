@@ -30,9 +30,6 @@ import { UserloginComponent } from './userlogin/userlogin.component';
     UserfrontComponent,HomeComponent,  AboutComponent,
     ReactiveFormsModule,
    
-  
-    
-    
   ],
     providers: [AuthloginService,],
   templateUrl: './app.component.html',
