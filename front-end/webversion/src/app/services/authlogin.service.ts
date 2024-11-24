@@ -1,11 +1,15 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs/internal/Observable';
 
+import { HttpClient } from '@angular/common/http';
+
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthloginService {
+
   private apiUrl = 'http://localhost:3000/groups';
   ProfilUser={
     username:'',
@@ -29,6 +33,19 @@ return this.http.post('http://localhost:3000/register',ProfilUser)
  // Créer un groupe
  createGroup(group: any): Observable<any> {
   return this.http.post(this.apiUrl, group);
+=======
+  loggedIn = false;
+
+  constructor(private http: HttpClient) {}
+
+  loginUser(data: any) {
+    return this.http.post('http://localhost:3000/login', data);
+  }
+
+  registeruser(profilUser: any) {
+    return this.http.post('http://localhost:3000/register', profilUser);
+  }
+
 }
 
 

@@ -3,9 +3,8 @@
 	  <form [formGroup]="signupForm" #f="ngForm" (ngSubmit)="register(f)">
 		<h1>Create Account</h1>
 		<div class="social-container">
-		  <a href="#" class="socialf fac"><i class="fab fa-facebook-f"></i></a>
-		  <a href="#" class="socialg goo"><i class="fab fa-google-plus-g"></i></a>
-		</div>
+		  <a href="#"  (click)="loginWithFacebook()" class="socialf fac"><i class="bi bi-facebook"></i></a>
+				</div>
 		<br>
 		<span>or use your email for registration</span>
 		<input type="text" placeholder="Name" formControlName="name"  />
@@ -46,8 +45,8 @@
 		<div class="error" *ngIf="signupForm.get('phone')?.invalid && signupForm.get('phone')?.touched">
 			<div  class="perreur" *ngIf="signupForm.get('phone')?.errors?.['required']"> <i class="bi bi-exclamation-octagon"></i> Phone is required!</div>
 			<div  class="perreur" *ngIf="signupForm.get('phone')?.errors?.['pattern']"> <i class="bi bi-exclamation-octagon"></i> You should entrer numbers </div>
-
 		  </div>
+		<input type="file" name="userimg" placeholder="picture profile ">
 		  <br>
 		<div class="button">
 		  <button type="submit" > <i class="bi bi-box-arrow-in-right"></i>  Sign Up</button>  <span>  </span> 
@@ -60,9 +59,23 @@
 	  <form [formGroup]="loginForm" >
 		<h1>Sign in</h1>
 		<div class="social-container">
-		  <a href="#" class="social fac"><i class="fab fa-facebook-f"></i></a>
-		  <a href="#" class="social goo"><i class="fab fa-google-plus-g"></i></a>
-		</div>
+		  <a href="#" class="social fac"><i class="bi bi-facebook"></i></a>
+		  <div id="g_id_onload"
+		  data-client_id="468043697793-5a5c9mklegsoqm4ofm419av2rbqbqj3e.apps.googleusercontent.com"
+		  data-context="signin"
+		  data-ux_mode="popup"
+		  data-login_uri="http://localhost:3000/api/login"
+		  data-auto_prompt="false">
+	 </div>
+	 
+	 <div class="g_id_signin"
+		  data-type="standard"
+		  data-shape="pill"
+		  data-theme="filled_blue"
+		  data-text="signin_with"
+		  data-size="large"
+		  data-logo_alignment="left">
+	 </div>		</div>
 		<span>or use your account</span>
   
 		<input type="email" placeholder="Email" formControlName="loginEmail" />
@@ -74,7 +87,7 @@
 		<div class="error" *ngIf="loginForm.get('loginPassword')?.invalid && loginForm.get('loginPassword')?.touched">
 			<div class="perreur" *ngIf="loginForm.get('loginPassword')?.errors?.['required']"> <i class="bi bi-exclamation-octagon"></i> Password is required!</div>
 		  </div>
-		<a href="#">Forgot your password?</a>
+		<a routerLink="/forgotpassword">Forgot your password?</a>
 		<button type="submit"> <i class="bi bi-box-arrow-in-right"></i> Sign In</button>
 	  </form>
 	</div>

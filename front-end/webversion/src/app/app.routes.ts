@@ -1,8 +1,7 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminFrontComponent } from './layouts/admin-front/admin-front.component';
 import { UserfrontComponent } from './layouts/userfront/userfront.component';
-
 import { LoginComponent } from './layouts/login/login.component';
 
 
@@ -14,7 +13,11 @@ import { ContactComponent } from './views/front/contact/contact.component';
 
 
 import { ClientComponent } from './layouts/client/client.component';
-import { LoginuserComponent } from './layouts/loginuser/loginuser.component';
+
+
+import { UserloginComponent } from './userlogin/userlogin.component';
+import { UserregisterComponent } from './userregister/userregister.component';
+
 
 
 
@@ -29,9 +32,7 @@ export const routes: Routes = [
        {path:'',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
        {path:'about',loadComponent:()=>import('./views/front/about/about.component').then(c=>c.AboutComponent)},
        {path:'contact',loadComponent:()=>import('./views/front/contact/contact.component').then(c=>c.ContactComponent)},
-    ]}
-
- ,
+    ]},
 
 
     { path:'client',component:ClientComponent,children: [
@@ -51,11 +52,18 @@ export const routes: Routes = [
 
     
 
+
    ,{path:'admin',component:AdminFrontComponent,children: [
         
     ]},
     {path:'login',component:LoginComponent},
    // {path:'signin',component:SigninComponentComponent}
+
+    ,{path:'admin',component:AdminFrontComponent},
+    //{path:'login',component:LoginComponent},
+    {path:"login",component:UserloginComponent},
+    {path:"register",component:UserregisterComponent}
+
 
 
 ];
