@@ -2,13 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminFrontComponent } from './layouts/admin-front/admin-front.component';
 import { UserfrontComponent } from './layouts/userfront/userfront.component';
-import { LoginComponent } from './layouts/login/login.component';
 
-
-
-import { HomeComponent } from './views/front/home/home.component';
-import { AboutComponent } from './views/front/about/about.component';
-import { ContactComponent } from './views/front/contact/contact.component';
 
 
 
@@ -17,8 +11,6 @@ import { ClientComponent } from './layouts/client/client.component';
 
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserregisterComponent } from './userregister/userregister.component';
-
-
 
 
 
@@ -48,19 +40,9 @@ export const routes: Routes = [
         {path:'adhd-quiz',loadComponent:()=>import('./views/user/adhd-quiz/adhd-quiz.component').then(c=>c.AdhdQuizComponent)},
         {path:'quiz',loadComponent:()=>import('./views/user/quiz/quiz.component').then(c=>c.QuizComponent)},
 
-        ]}
+        ]},
 
-    
-
-
-   ,{path:'admin',component:AdminFrontComponent,children: [
-        
-    ]},
-    {path:'login',component:LoginComponent},
-   // {path:'signin',component:SigninComponentComponent}
-
-    ,{path:'admin',component:AdminFrontComponent},
-    //{path:'login',component:LoginComponent},
+        {path:"admin",component:AdminFrontComponent},
     {path:"login",component:UserloginComponent},
     {path:"register",component:UserregisterComponent}
 

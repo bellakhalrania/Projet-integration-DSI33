@@ -14,36 +14,18 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 
 
 
-
-import { CommonModule } from '@angular/common';
 import { LoginComponent } from './layouts/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
-import { AjouterGroupComponent } from './views/admin/ajouter-group/ajouter-group.component';
-
-
-
-
-
-
-
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
 
-
-<
   imports: [RouterOutlet,AdminFrontComponent,CommonModule, HttpClientModule,
     UserfrontComponent,HomeComponent,LoginComponent,
-    AboutComponent,ContactComponent,
-    ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent,AjouterGroupComponent],
+    AboutComponent],
 
-
-   
-  ],
     providers: [AuthloginService,],
-
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
