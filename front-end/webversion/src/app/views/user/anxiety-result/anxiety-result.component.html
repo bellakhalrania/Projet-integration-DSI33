@@ -1,0 +1,8 @@
+<div class="card">
+    <h3>Your Anxiety Score: {{ score }}</h3>
+    <p *ngIf="score > 15">You may be experiencing high anxiety.</p>
+    <p *ngIf="score <= 15 && score > 5">You may have moderate anxiety.</p>
+    <p *ngIf="score <= 5">Your anxiety level seems to be low.</p>
+  </div>`
+  
+  

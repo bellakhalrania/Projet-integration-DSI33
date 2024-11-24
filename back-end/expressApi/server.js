@@ -1,7 +1,9 @@
 const express = require('express');
 const userRoute=require('./routers/user.router')
+
 const FacebookStrategy = require('passport-facebook').Strategy;
 const cors = require('cors');
+
 const app = express();
 const port=3000;
 const session = require('express-session');
