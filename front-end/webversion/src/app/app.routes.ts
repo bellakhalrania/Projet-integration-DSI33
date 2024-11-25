@@ -2,19 +2,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminFrontComponent } from './layouts/admin-front/admin-front.component';
 import { UserfrontComponent } from './layouts/userfront/userfront.component';
-
-
-
-
 import { ClientComponent } from './layouts/client/client.component';
-
-
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserregisterComponent } from './userregister/userregister.component';
-
-
-
-
 
 
 
@@ -43,8 +33,8 @@ export const routes: Routes = [
         ]},
 
         {path:"admin",component:AdminFrontComponent},
-    {path:"login",component:UserloginComponent},
-    {path:"register",component:UserregisterComponent}
+        {path:"login",component:UserloginComponent},
+        {path:"register",component:UserregisterComponent}
 
 
 
