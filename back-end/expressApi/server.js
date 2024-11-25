@@ -2,6 +2,11 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
+  
+// Importer les routes
+import userRoute from './routers/user.router.js';
+import taskRoute from './routers/tasks.router.js';
+
 
 
 // Charger les variables d'environnement
@@ -17,8 +22,6 @@ app.use(express.urlencoded({ extended: true }));
 const DB_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/Mentalhealth_db';
 mongoose
   .connect(DB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
   })
   .then(() => console.log('Connected to MentalHealth_db'))
   .catch((error) => console.error('Database connection error:', error));
@@ -29,10 +32,6 @@ mongoose
    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers}));
    }));
 
-  
-// Importer les routes
-import userRoute from './routers/user.router.js';
-import taskRoute from './routers/tasks.router.js';
 
 app.use('/', userRoute);
 app.use('/tasks', taskRoute);

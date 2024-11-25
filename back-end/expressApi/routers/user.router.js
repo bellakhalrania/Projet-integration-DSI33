@@ -1,27 +1,13 @@
-import { register, login } from '../models/user.model.js';
-import { Router } from 'express';
+// routes/userRoutes.js
+import express from 'express';
+import { register, login } from '../controllers/userController.js';
 
-const route = Router();
+const router = express.Router();
 
-// Route d'enregistrement
-route.post('/register', async (req, res, next) => {
-  try {
-    const user = await register(req.body.username, req.body.email, req.body.password);
-    res.status(200).json({ user, msg: "Utilisateur ajouté avec succès !" });
-  } catch (err) {
-    next(err);
-  }
-});
+// Route for user registration
+router.post('/register', register);
 
-// Route de connexion
-route.post('/login', async (req, res, next) => {
-  try {
-    const token = await login(req.body.email, req.body.password);
-    res.status(200).json({ token });
-  } catch (err) {
-    next(err);
-  }
-});
+// Route for user login
+router.post('/login', login);
 
-// Exporter les routes
-export default route;
+export default router;
