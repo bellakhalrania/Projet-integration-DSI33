@@ -28,12 +28,12 @@ export const register = async (req, res) => {
 
 // Function to log in a user
 export const login = async (req, res) => {
-    const { identifier, password } = req.body; // Use "identifier" for email or username
+    const { emailORusername, password } = req.body; // Use "identifier" for email or username
 
     try {
         // Find the user by email or username
         const user = await User.findOne({
-            $or: [{ email: identifier }, { username: identifier }]
+            $or: [{ email: mailORusername }, { username: mailORusername }]
         });
         
         if (!user) {
