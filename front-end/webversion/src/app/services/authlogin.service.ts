@@ -25,6 +25,9 @@ export class AuthloginService {
 //register user
 registeruser(ProfilUser:any){
 return this.http.post('http://localhost:3000/register',ProfilUser)
+
+
+
 }
 //register user
 }

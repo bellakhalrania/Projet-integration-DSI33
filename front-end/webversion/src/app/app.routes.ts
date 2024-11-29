@@ -47,7 +47,14 @@ export const routes: Routes = [
 
     
 
-    ,{path:'admin',component:AdminFrontComponent},
+    ,{path:'admin',component:AdminFrontComponent,children: [
+
+      {path:'ajouter-exercice',loadComponent:()=>import('./views/admin/ajouter-exercice/ajouter-exercice.component').then(c=>c.AjouterExerciceComponent)},
+      {path:'list-exercices',loadComponent:()=>import('./views/admin/list-exercices/list-exercices.component').then(c=>c.ListExercicesComponent)},
+      {path:'ajouter-group',loadComponent:()=>import('./views/admin/ajouter-group/ajouter-group.component').then(c=>c.AjouterGroupComponent)},
+    ]},
+   
+    
    
     {path:'login',component:LoginComponent},
    // {path:'signin',component:SigninComponentComponent}

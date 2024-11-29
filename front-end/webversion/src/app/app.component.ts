@@ -24,6 +24,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './layouts/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExercicesComponent } from './views/user/exercices/exercices.component';
+import { AjouterExerciceComponent } from './views/admin/ajouter-exercice/ajouter-exercice.component';
+
 
 
 
@@ -38,7 +40,7 @@ import { ExercicesComponent } from './views/user/exercices/exercices.component';
   imports: [RouterOutlet,AdminFrontComponent,CommonModule, HttpClientModule,
     UserfrontComponent,HomeComponent,LoginComponent,
     AboutComponent,ContactComponent,
-    ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent,ExercicesComponent],
+    ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent,ExercicesComponent,AjouterExerciceComponent],
 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
