@@ -5,6 +5,7 @@ import { UserfrontComponent } from './layouts/userfront/userfront.component';
 import { ClientComponent } from './layouts/client/client.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserregisterComponent } from './userregister/userregister.component';
+import { ChatBotComponent } from './layouts/chat-bot/chat-bot.component';
 
 
 
@@ -14,6 +15,7 @@ export const routes: Routes = [
        {path:'',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
        {path:'about',loadComponent:()=>import('./views/front/about/about.component').then(c=>c.AboutComponent)},
        {path:'contact',loadComponent:()=>import('./views/front/contact/contact.component').then(c=>c.ContactComponent)},
+       
     ]},
 
 
@@ -34,7 +36,9 @@ export const routes: Routes = [
 
         {path:"admin",component:AdminFrontComponent},
         {path:"login",component:UserloginComponent},
-        {path:"register",component:UserregisterComponent}
+        {path:"register",component:UserregisterComponent},
+        {path:"chat-bot",component:ChatBotComponent},
+
 
 
 

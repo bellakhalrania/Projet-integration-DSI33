@@ -15,6 +15,7 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 
 
 import { LoginComponent } from './layouts/login/login.component';
+import { ChatBotComponent } from './layouts/chat-bot/chat-bot.component';
 
 
 @Component({
@@ -22,7 +23,7 @@ import { LoginComponent } from './layouts/login/login.component';
   standalone: true,
 
   imports: [RouterOutlet,AdminFrontComponent,CommonModule, HttpClientModule,
-    UserfrontComponent,HomeComponent,LoginComponent,
+    UserfrontComponent,HomeComponent,LoginComponent,ChatBotComponent,
     AboutComponent],
 
     providers: [AuthloginService,],
