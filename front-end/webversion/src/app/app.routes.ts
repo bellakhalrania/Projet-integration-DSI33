@@ -34,11 +34,26 @@ export const routes: Routes = [
 
         ]},
 
-        {path:"admin",component:AdminFrontComponent},
+       
         {path:"login",component:UserloginComponent},
         {path:"register",component:UserregisterComponent},
         {path:"chat-bot",component:ChatBotComponent},
 
+
+
+    ,{path:'admin',component:AdminFrontComponent,children: [
+
+      {path:'ajouter-exercice',loadComponent:()=>import('./views/admin/ajouter-exercice/ajouter-exercice.component').then(c=>c.AjouterExerciceComponent)},
+      {path:'list-exercices',loadComponent:()=>import('./views/admin/list-exercices/list-exercices.component').then(c=>c.ListExercicesComponent)},
+      {path:'ajouter-group',loadComponent:()=>import('./views/admin/ajouter-group/ajouter-group.component').then(c=>c.AjouterGroupComponent)},
+      {path:'list-groups',loadComponent:()=>import('./views/admin/list-groups/list-groups.component').then(c=>c.ListGroupsComponent)}, 
+   
+   ]},
+   
+    
+   
+    //{path:'login',component:LoginComponent},
+ 
 
 
 
