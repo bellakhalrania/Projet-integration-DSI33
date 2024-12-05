@@ -1,0 +1,51 @@
+<section style="background-image: url(../../../../assets/bijita.JPG);">
+
+<div class="commonQuiz" style="margin-top:120px;">
+    <div class="container">
+      <h2 style=" align-items: center; 
+    text-align: center; ">ADHD TEST</h2>
+  
+      <!-- Affichage des questions -->
+      <div *ngIf="!isQuizOver()">
+        <div class="Quiz-question-option">
+          <h3>{{ questions[currentQuestion].question }}</h3>
+          <p>
+            <button
+              *ngFor="let answer of questions[currentQuestion].answers; let answerIndex = index"
+              class="option-btn"
+              [class.checked]="clickedOption === (answerIndex + 1)"
+              (click)="clickedOption = answerIndex + 1"
+            >
+              {{ answer }}
+            </button>
+          </p>
+          <input 
+            type="button" 
+            value="Next" 
+            id="next-button" 
+            (click)="changeQuestion()">
+        </div>
+      </div>
+  
+      <!-- Résultats à la fin du quiz -->
+      <div *ngIf="isQuizOver()">
+        <h2 class="result-heading" style=" align-items: center; 
+    text-align: center;">Result</h2>
+        <h3 class="score">{{ score }}</h3>
+  
+        <button *ngIf="!showResult" (click)="handleSubmit()" id="submit-button" class="button">
+          Submit
+        </button>
+  
+        <div *ngIf="score > 1">
+          <app-adhd-result [score]="score" style=" align-items: center; 
+    text-align: center;"></app-adhd-result>
+        </div>
+  
+        <button (click)="handleResetClick()" class="button">
+          Restart Quiz
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

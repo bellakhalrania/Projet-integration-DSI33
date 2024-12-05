@@ -1,10 +1,16 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { Observable } from 'rxjs/internal/Observable';
+
+import { HttpClient } from '@angular/common/http';
+
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthloginService {
+
+  private apiUrl = 'http://localhost:3000/groups';
   ProfilUser={
     username:'',
     email:'',
@@ -19,6 +25,7 @@ export class AuthloginService {
     return this.http.post('http://localhost:3000/login',data)
   }
 
+
   
 
 
@@ -26,8 +33,7 @@ export class AuthloginService {
 registeruser(ProfilUser:any){
 return this.http.post('http://localhost:3000/register',ProfilUser)
 
-
+}
 
 }
-//register user
-}
+ 
