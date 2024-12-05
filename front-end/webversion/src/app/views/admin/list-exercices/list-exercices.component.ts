@@ -30,7 +30,8 @@ export class ListExercicesComponent implements OnInit {
     description:'',
     duree:'',
     creationDate:'',
-    image_path:'',
+    imagePath:'',
+    videourl:'',
     id:''
   }
 
@@ -57,68 +58,75 @@ export class ListExercicesComponent implements OnInit {
   }
 
 
-
-  getdata(title: string, type: string, description: string, duree: string, creationDate: string, image_path: string, id: any) {
-    console.log('Data passed to getdata:', { title, type, description, duree, creationDate, image_path, id });
+  getdata(title: string, type: string, description: string, duree: string, creationDate: string,videourl:string, imagePath: string, id: any) {
+    console.log('Data passed to getdata:', { title, type, description, duree, creationDate, imagePath,videourl, id });
+    console.log('Image URL:', imagePath); 
     this.messageSuccess = '';
     this.dataExercice.title = title;
     this.dataExercice.type = type;
     this.dataExercice.description = description;
     this.dataExercice.duree = duree;
     this.dataExercice.creationDate = creationDate;
-    this.dataExercice.image_path = image_path;
+    this.dataExercice.imagePath = imagePath;
+    this.dataExercice.videourl=videourl;
     this.dataExercice.id = id;
   }
   
 
-  update(f: any) {
-    let data= f.value
-    this.ds.editExercice(this.dataExercice.id,data).subscribe(
-      response=>{
-        console.log(response)
-        let indexid = this.dataArray.findIndex((obj: any) => obj.id == this.dataExercice.id);
-        if (indexid !== -1 && this.dataArray[indexid]) {
-          this.dataArray[indexid].title = data.title;
-          this.dataArray[indexid].type = data.type;
-          this.dataArray[indexid].description = data.description;
-          this.dataArray[indexid].duree = data.duree;
-          this.dataArray[indexid].creationDate = data.creationDate;
-          this.dataArray[indexid].image_path = data.image_path;
-       
-          this.messageSuccess = ` exercice modifé`;
-        } else {
-          console.error('Error: Invalid index or dataArray element is undefined.');
-        }
-        
-      }
-      ,(error:HttpErrorResponse)=>{
-        console.log(error.message)})
-   
+
+  selectedFile: File | null = null; // Variable pour stocker le fichier sélectionné
+
+  onImageSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+      
+      
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.dataExercice.imagePath = reader.result as string;
+      };
+      reader.readAsDataURL(this.selectedFile);
+    }
   }
+  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  update(f: any) {
+    const formData = new FormData();
+    formData.append('title', this.dataExercice.title);
+    formData.append('type', this.dataExercice.type);
+    formData.append('description', this.dataExercice.description);
+    formData.append('duree', this.dataExercice.duree);
+    formData.append('creationDate', this.dataExercice.creationDate);
+    formData.append('videourl', this.dataExercice.videourl);
+  
+    if (this.selectedFile) {
+      formData.append('file', this.selectedFile);
+    }
+  
+    this.ds.editExercice(this.dataExercice.id, formData).subscribe(
+      response => {
+        console.log(response);
+        this.messageSuccess = `Exercice modifié`;
+        // Mettre à jour la vue
+      },
+      (error: HttpErrorResponse) => {
+        console.error(error.message);
+      }
+    );
+    console.log('FormData:', this.dataExercice);
+  }
   
   ngOnInit(): void {
   }
 
+  logImageError(imagePath: string) {
+    console.error('Image failed to load:', imagePath);
+  }
+
+ 
+
+  
 }
 

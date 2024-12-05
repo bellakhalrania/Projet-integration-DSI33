@@ -32,6 +32,7 @@ import { AjouterExerciceComponent } from './views/admin/ajouter-exercice/ajouter
 
 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

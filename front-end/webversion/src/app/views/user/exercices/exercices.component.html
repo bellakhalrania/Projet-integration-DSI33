@@ -2,10 +2,10 @@
     <div class="meditation-resources">
   <h2>Meditation, Yoga, Exercises and more...</h2>
   <div class="resource-slider">
-    <div *ngFor="let resource of resources" class="resource-card">
-      <a [href]="resource.link" target="_blank" rel="noopener noreferrer">
-        <img [src]="resource.gifLink" [alt]="resource.title" />
-        <h4>{{ resource.title }}</h4>
+    <div *ngFor="let item of dataArray;index as i" class="resource-card">
+      <a [href]="item.videourl" target="_blank" rel="noopener noreferrer">
+        <img [src]="item.imagePath" alt="{{item.title}}" width="150" height="150" />
+        <h4>{{ item.title }}</h4>
       </a>
     </div>
   </div>

@@ -11,11 +11,7 @@ export class ExerciceService {
  
 
   addExercice(data: any) {
-    return this.http.post('http://localhost:8081/api/exercices', data, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })}
+    return this.http.post('http://localhost:8081/api/exercices', data)}
 
   // Modifier un exercice
   editExercice(id: string, newdata: any) {

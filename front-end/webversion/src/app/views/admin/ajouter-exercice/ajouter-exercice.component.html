@@ -1,4 +1,4 @@
-<h1 class="title">ADD New Exercice</h1>
+<!--h1 class="title">ADD New Exercice</h1>
 <ul class="breadcrumbs">
     <li><a>ADD Exercice</a></li>
     <li class="divider">/</li>
@@ -45,4 +45,46 @@
       </form>
     </div>
   </div>
-</div>
+</div-->
+<form #f="ngForm" (ngSubmit)="add(f)">
+  <div class="form-group row">
+    <label for="title" class="col-sm-2 col-form-label">Title</label>
+    <input type="text" class="form-control col-sm-6" name="title" #title="ngModel" ngModel required>
+  </div>
+
+  <div class="form-group row">
+    <label for="type" class="col-sm-2 col-form-label">Type</label>
+    <input type="text" class="form-control col-sm-6" name="type" #type="ngModel" ngModel required>
+  </div>
+
+  <div class="form-group row">
+    <label for="description" class="col-sm-2 col-form-label">Description</label>
+    <input type="text" class="form-control col-sm-6" name="description" #description="ngModel" ngModel required>
+  </div>
+
+  <div class="form-group row">
+    <label for="duree" class="col-sm-2 col-form-label">Duration</label>
+    <input type="text" class="form-control col-sm-6" name="duree" #duree="ngModel" ngModel required>
+  </div>
+
+  <div class="form-group row">
+    <label for="creationDate" class="col-sm-2 col-form-label">Date Creation</label>
+    <input type="datetime-local" class="form-control col-sm-6" name="creationDate" #creationDate="ngModel" ngModel required>
+  </div>
+  <div class="form-group row">
+    <label for="videourl" class="col-sm-2 col-form-label">video Url</label>
+    <input type="text" class="form-control col-sm-6" name="videoUrl" #videoUrl="ngModel" ngModel required>
+  </div>
+ 
+  <div class="form-group row">
+    <label for="file" class="col-sm-2 col-form-label">Image</label>
+    <input type="file" class="form-control col-sm-6"  name="file" (change)="onFileSelected($event)" />
+  </div>
+
+  <div class="form-group row">
+    <button type="submit" class="btn btn-primary">ADD</button>
+  </div>
+</form>
+
+
+
