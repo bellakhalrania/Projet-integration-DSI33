@@ -5,6 +5,7 @@ import { UserfrontComponent } from './layouts/userfront/userfront.component';
 import { ClientComponent } from './layouts/client/client.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserregisterComponent } from './userregister/userregister.component';
+import { ChatBotComponent } from './layouts/chat-bot/chat-bot.component';
 
 
 
@@ -14,6 +15,7 @@ export const routes: Routes = [
        {path:'',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
        {path:'about',loadComponent:()=>import('./views/front/about/about.component').then(c=>c.AboutComponent)},
        {path:'contact',loadComponent:()=>import('./views/front/contact/contact.component').then(c=>c.ContactComponent)},
+       
     ]},
 
 
@@ -32,9 +34,26 @@ export const routes: Routes = [
 
         ]},
 
-        {path:"admin",component:AdminFrontComponent},
+       
         {path:"login",component:UserloginComponent},
-        {path:"register",component:UserregisterComponent}
+        {path:"register",component:UserregisterComponent},
+        {path:"chat-bot",component:ChatBotComponent},
+
+
+
+    ,{path:'admin',component:AdminFrontComponent,children: [
+
+      {path:'ajouter-exercice',loadComponent:()=>import('./views/admin/ajouter-exercice/ajouter-exercice.component').then(c=>c.AjouterExerciceComponent)},
+      {path:'list-exercices',loadComponent:()=>import('./views/admin/list-exercices/list-exercices.component').then(c=>c.ListExercicesComponent)},
+      {path:'ajouter-group',loadComponent:()=>import('./views/admin/ajouter-group/ajouter-group.component').then(c=>c.AjouterGroupComponent)},
+      {path:'list-groups',loadComponent:()=>import('./views/admin/list-groups/list-groups.component').then(c=>c.ListGroupsComponent)}, 
+   
+   ]},
+   
+    
+   
+    //{path:'login',component:LoginComponent},
+ 
 
 
 

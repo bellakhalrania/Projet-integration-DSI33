@@ -8,6 +8,11 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
+
+
+
+
+
 import { AuthloginService } from './services/authlogin.service';
 import { UserregisterComponent } from './userregister/userregister.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
@@ -16,6 +21,7 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 
 
 import { LoginComponent } from './layouts/login/login.component';
+import { ChatBotComponent } from './layouts/chat-bot/chat-bot.component';
 
 
 @Component({
@@ -23,8 +29,12 @@ import { LoginComponent } from './layouts/login/login.component';
   standalone: true,
 
   imports: [RouterOutlet,AdminFrontComponent,CommonModule, HttpClientModule,
+
     UserfrontComponent,HomeComponent,LoginComponent,
-    AboutComponent],
+    AboutComponent,ContactComponent,
+    ClientComponent,GroupsComponent,WorckshopComponent,TodoListComponent,ExercicesComponent,AjouterExerciceComponent, ChatBotComponent],
+
+ 
 
     providers: [AuthloginService,],
   templateUrl: './app.component.html',

@@ -1,56 +1,14 @@
-
-
-
-            <section id="services" class="services position-relative light-background" style="margin-top: 0px !important;">
-                <div class="container">
-                  <div class="section-title" style="margin-top: 120px;">
-                    
-                    <h3 class="text-rose mb-4 border-bottom border-rose border-2 d-inline-block p-2 title-border-radius">Caregivers Mental Health Support</h3>
-                    <h5 class="text-rose mb-4" style="color: rgb(176, 41, 97);">Connect with a community of caregivers, share experiences, and find essential mental health resources</h5>
-                  </div>
-                  <div class="row">
-                    <!-- Card avec lien et image personnalisée -->
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch">
-                        <div class="icon-box">
-                          <a href="https://themindclan.com/reach-out/?P=a08254630019062b4b9f3103cf18fd49&utm_source=platform" target="_blank">
-                            <img src="https://themindclan.com/images/smaller/sharing_spaces/care-givers-mental-health-support-group-offline-bandra-west-mumbai.webp" 
-                                 class="card-img-top" alt="Caregivers Support" style="border-radius:20px;">
-                          </a>
-                        </div>
-                    </div>
-                      
-                    
-                    
-                    <!-- Autres cartes de service existantes -->
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch">
-                     <div class="icon-box">
-                          <a href="https://themindclan.com/sharing_spaces/through-thick-and-thin-04072022/" target="_blank">
-                            <img src="https://themindclan.com/images/smaller/sharing_spaces/ttnt.webp" 
-                                 class="card-img-top" alt="Caregivers Support" style="border-radius:20px;">
-                          </a>
-                        </div>
-                    </div>
-                   
-                    <!-- Autres cartes ici... -->
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch">
-                        <div class="icon-box">
-                             <a href= "https://themindclan.com/sharing_spaces/group-therapy-01082023/" target="_blank">
-                               <img src="https://themindclan.com/images/smaller/sharing_spaces/group-therapy-by-ayesha-dialogue-mental-health.webp"
-                                    class="card-img-top" alt="Caregivers Support" style="border-radius:20px;">
-                             </a>
-                           </div>
-                       </div>
-                
-                
-                <div class="col-xl-3 col-md-6 d-flex align-items-stretch" >
-                  <div class="icon-box">
-                    <a href= "https://themindclan.com/sharing_spaces/bpd-space-bpd-support-group-18072023/" target="_blank">
-                        <img src="https://themindclan.com/images/smaller/sharing_spaces/bpd-space-support-group-peer-led-for-bpd-india-online.webp" 
-                             class="card-img-top" alt="Caregivers Support" style="border-radius:20px;">
-                      </a>
-                  </div>
-                </div>
+          <section id="services" class="services position-relative light-background" style="margin-top: 0px !important;">
+            <div class="meditation-resources">
+          <h2>Caregivers Mental Health Support</h2>
+          <h5>Connect with a community of caregivers, share experiences, and find essential mental health resources</h5>
+          <div class="resource-slider">
+            <div *ngFor="let item of dataArray;index as i" class="resource-card">
+              <a [href]="item.groupurl" target="_blank" rel="noopener noreferrer">
+                <img [src]="item.imagePath" alt="{{item.name}}" width="150" height="150" />
+                <h4>{{ item.name }}</h4>
+              </a>
             </div>
-                </div>
-            <br><br>
-          </section>
+          </div>
+        </div>
+        </section>
