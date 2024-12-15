@@ -21,6 +21,7 @@ export const addTask = async (req, res, next) => {
             startTime: req.body.startTime,
             completed: req.body.completed || false,
         });
+        console.log('New task added:', newTask);
         const savedTask = await newTask.save();
         res.status(201).json({message: 'Task added successfully', task: savedTask});
     } catch (err) {
@@ -72,3 +73,5 @@ export const completedtask = async (req, res, next) => {
         next(err);
     }
 };
+
+export default { getAllTasks, addTask, updateTask, deleteTask, completedtask };

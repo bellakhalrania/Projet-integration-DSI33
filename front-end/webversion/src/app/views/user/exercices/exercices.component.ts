@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ExerciceService } from '../../../services/exercice.service';
+
 
 @Component({
   selector: 'app-exercices',
@@ -9,6 +11,66 @@ import { Component } from '@angular/core';
   styleUrl: './exercices.component.css'
 })
 export class ExercicesComponent {
+
+  dataArray : any=[];
+  dataExercice={ 
+    title:'',
+    type:'',
+    description:'',
+    duree:'',
+    creationDate:'',
+    imagePath:'',
+    videourl:'',
+    id:''
+  }
+
+
+
+ 
+  messageErr=''
+
+  messageSuccess=''
+ 
+
+
+
+
+
+  
+  constructor(private ds:ExerciceService) {
+    this.ds.getAllExercices().subscribe(data=>{
+    this.dataArray=data  
+    console.log(data);
+    })
+   }
+
+   getdata(title: string, type: string, description: string, duree: string, creationDate: string,videourl:string, imagePath: string, id: any) {
+    console.log('Data passed to getdata:', { title, type, description, duree, creationDate,videourl, imagePath, id });
+    this.messageSuccess = '';
+    this.dataExercice.title = title;
+    this.dataExercice.type = type;
+    this.dataExercice.description = description;
+    this.dataExercice.duree = duree;
+    this.dataExercice.creationDate = creationDate;
+    this.dataExercice.imagePath = imagePath;
+    this.dataExercice.videourl = videourl;
+    this.dataExercice.id = id;
+
+    if (videourl) {
+      window.open(videourl, '_blank');
+    }
+
+  }
+
+ 
+
+
+  ngOnInit(): void {
+    
+  }
+}
+
+  /*
   resources = [
     {
       type: 'article',
@@ -58,5 +120,4 @@ export class ExercicesComponent {
       link: 'https://www.outlookindia.com/healths/world-mental-health-day-how-does-daily-meditation-really-help-us--news-219648',
       gifLink: 'https://media2.giphy.com/media/GD32HNX7JduZBfHIdZ/giphy.gif',
     },
-  ];
-}
+  ];*/
