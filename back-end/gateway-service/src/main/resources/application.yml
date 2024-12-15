@@ -4,14 +4,6 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: customer-service
-          uri: lb://CUSTOMER-SERVICE  # Load-balanced URI
-          predicates:
-            - Path=/customers/**
-        - id: inventory-service
-          uri: lb://INVENTORY-SERVICE
-          predicates:
-            - Path=/products/**
         - id: express-service
           uri: lb://GATEWAY-SERVICE
           predicates:
