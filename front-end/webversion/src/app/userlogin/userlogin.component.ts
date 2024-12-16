@@ -28,7 +28,6 @@ export class UserloginComponent {
       console.log(data);
       this.ads.loginUser(data).subscribe((response) => {
         this.dataReceived = response;
-         
         console.log(this.ads.loggedIn);
         this.route.navigate(['/']);
        

@@ -14,11 +14,6 @@ import taskRoute from './routers/tasks.router.js';
 dotenv.config();
 const app = express();
 
-// Middleware CORS (Place it before the routes)
-
-
- // Ensure this is before your routes
-
 
 // Middleware pour traiter les requêtes JSON et URL encodées
 app.use(express.json());
@@ -62,9 +57,11 @@ eurekaClient.start((error, response) => {
   }
 });
 
-//routes (Place routes after CORS middleware)
+
+// Define routes
 app.use('/api', userRoute);
 app.use('/api/tasks', taskRoute);
+
 
 // Connexion à MongoDB
 const DB_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/Mentalhealth_db';
