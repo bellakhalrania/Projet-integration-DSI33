@@ -23,7 +23,7 @@ export class UserregisterComponent {
   register(f:any){
     let data=f.value
     console.log(data)
-    this.ads.registeruser(data).subscribe(response=>{
+    this.ads.registerUser(data).subscribe(response=>{
       console.log(response)
       this.route.navigate(['login'])
       

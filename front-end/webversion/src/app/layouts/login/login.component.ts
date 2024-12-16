@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   register(f:any){
     let data=f.value
   //console.log(data)
-  this.ds.registeruser(data).subscribe(response=>{
+  this.ds.registerUser(data).subscribe(response=>{
     //console.log(response)
    // this.route.navigate(['loginuser'])
     

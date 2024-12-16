@@ -1,10 +1,11 @@
+// Charger les modules
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 //import euraka
 import { Eureka } from 'eureka-js-client';
-  
+
 // Importer les routes
 import userRoute from './routers/user.router.js';
 import taskRoute from './routers/tasks.router.js';
@@ -12,6 +13,12 @@ import taskRoute from './routers/tasks.router.js';
 // Charger les variables d'environnement
 dotenv.config();
 const app = express();
+
+// Middleware CORS (Place it before the routes)
+
+
+ // Ensure this is before your routes
+
 
 // Middleware pour traiter les requêtes JSON et URL encodées
 app.use(express.json());
@@ -41,7 +48,6 @@ const eurekaClient = new Eureka({
   },
 });
 
-
 // Démarrage du client Eureka et enregistrement du service
 eurekaClient.start((error, response) => {
   if (error) {
@@ -56,12 +62,9 @@ eurekaClient.start((error, response) => {
   }
 });
 
-
-//routes:
+//routes (Place routes after CORS middleware)
 app.use('/api', userRoute);
 app.use('/api/tasks', taskRoute);
-
-
 
 // Connexion à MongoDB
 const DB_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/Mentalhealth_db';
@@ -69,13 +72,6 @@ mongoose
   .connect(DB_URI)
   .then(() => console.log('Connected to MentalHealth_db'))
   .catch((error) => console.error('Database connection error:', error));
-
-// CORS
-app.use(cors({
-  origin: '*', // Allow all origins (for development, be more specific in production)
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
-}));
 
 // Gestion des erreurs globales
 app.use((err, req, res, next) => {

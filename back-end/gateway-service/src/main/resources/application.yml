@@ -5,18 +5,34 @@ spring:
     gateway:
       routes:
         - id: express-service
-          uri: lb://GATEWAY-SERVICE
+          uri: lb://EXPRESS-SERVICE # Service à protéger via Keycloak
           predicates:
             - Path=/api/**
+          filters:
+            - RemoveRequestHeader=Cookie
       globalcors:
         cors-configurations:
           '[/**]': # Matches all paths
-            allowedOrigins: "*" # Allow all origins
-            allowedMethods: "*" # Allow all HTTP methods (GET, POST, PUT, DELETE, etc.)
-    discovery:
-      client:
-        service-url:
-          defaultZone: http://localhost:8761/eureka/  # Eureka server URL
-      enabled: true
+            allowedOrigins: # Liste des origines autorisées
+              - "http://localhost:4200" # Exemple : application Angular
+               # Exemple : service Express.js
+            allowedMethods: # Liste des méthodes HTTP autorisées
+              - "GET"
+              - "POST"
+              - "PUT"
+              - "DELETE"
+            allowedHeaders: # Liste des en-têtes autorisés
+              - "Authorization"
+              - "Cache-Control"
+              - "Content-Type"
+            allowCredentials: true # Autorise les cookies ou les identifiants
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # Eureka server URL
+  instance:
+    prefer-ip-address: true
+
 server:
   port: 8888
