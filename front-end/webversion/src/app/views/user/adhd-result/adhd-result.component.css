@@ -1,6 +1,6 @@
 .card {
-    background-color: #fff;          /* Fond blanc pour la carte */
-    border: 2px solid #003366;       /* Bordure bleue foncée */
+    background-color: #bbf1f3;          /* Fond blanc pour la carte */
+    border: 2px solid #80c0c3;       /* Bordure bleue foncée */
     border-radius: 10px;             /* Coins arrondis */
     padding: 20px;                   /* Espacement à l'intérieur de la carte */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ombre légère autour de la carte */
@@ -11,7 +11,7 @@
   }
   
   .card h3 {
-    color: #003366;                  /* Couleur du texte du titre (bleu foncé) */
+    color: #000000;                  /* Couleur du texte du titre (bleu foncé) */
     margin-bottom: 15px;             /* Espacement sous le titre */
   }
   

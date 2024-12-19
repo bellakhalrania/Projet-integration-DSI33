@@ -11,18 +11,18 @@ export class ExerciceService {
  
 
   addExercice(data: any) {
-    return this.http.post('http://localhost:8081/api/exercices', data)}
+    return this.http.post('http://localhost:8888/api/exercices', data)}
 
   // Modifier un exercice
   editExercice(id: string, newdata: any) {
-    return this.http.put(`http://localhost:8081/api/exercices/${id}`, newdata);
+    return this.http.put(`http://localhost:8888/api/exercices/${id}`, newdata);
   }
   deleteExercice(id: any) {
-    return this.http.delete(`http://localhost:8081/api/exercices/${id}`);
+    return this.http.delete(`http://localhost:8888/api/exercices/${id}`);
   }
   
 
   getAllExercices(){
-    return this.http.get('http://localhost:8081/api/exercices')
+    return this.http.get('http://localhost:8888/api/exercices')
   }
 }

@@ -63,7 +63,7 @@ export class AjouterExerciceComponent implements OnInit {
 
       // Requête POST vers le backend
       console.log('FormData envoyé:', formData);
-      this.http.post('http://localhost:8081/api/exercices', formData).subscribe({
+      this.http.post('http://localhost:8888/api/exercices', formData).subscribe({
         next: (response) => console.log('Exercice créé avec succès:', response),
         error: (error) => console.error('Erreur lors de la création:', error),
       });

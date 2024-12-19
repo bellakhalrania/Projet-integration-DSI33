@@ -1,261 +1,189 @@
+.quiz-section {
+  background: url('../../../../assets/bijita.JPG') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start; /* Aligne le conteneur en haut */
+  justify-content: center;
+  padding: 20px;
+  padding-top: 70px; /* Pousse le conteneur vers le bas */
+}
 
-/* quiz menu CSS */
 
-.Quiz .quiz-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: nowrap;
-    
-  }
-  
-  .Quiz .card {
-    flex: 0 1 calc(20% - 10px);
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: nowrap;
-    margin: 10px;
-    overflow: hidden;
-    border-radius: 10px;
-    max-width: none;
-    width: 100%;
-    height: 50%;
-    background-color: #ffffff;
-    margin-left: 5em;
-    margin-right: 3em;
-    margin-top: 5em;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
+
+
+.container {
+ 
+  background: transparent; /* Suppression de toute couleur */
+  border-radius: 20px; /* Coins arrondis */
+  padding: 40px 20px; /* Espacement intérieur */
+  width: 900px; /* Largeur fixe */
+  max-width: 900px; /* Largeur maximale */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Ombre légère */
+  margin: 70px auto; /* Centrage horizontal */
+  text-align: center; /* Centre le texte à l'intérieur */
+  backdrop-filter: blur(10px); /* Flou sur l'arrière-plan */
+  -webkit-backdrop-filter: blur(10px); /* Compatibilité WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optionnel : une bordure subtile */
+}
+
+
+
+
+/* Centrage du contenu */
+.quiz-title, .quiz-question {
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+/* Assurez-vous que les options s'adaptent à la largeur fixe */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Les boutons d'options s'adaptent */
+.quiz-option {
+  background: #f0f8ff;
+  color: #4be1e7;
+  border: 2px solid #43d2d7;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  width: 100%; /* Remplit la largeur du conteneur parent */
+  max-width: 700px; /* Largeur maximale pour ne pas être trop large */
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.quiz-option:hover {
+  background: #c6ebed;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Next Button */
+.quiz-next-btn {
+  display: block;
+  background: #56acaf;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 120px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 60px auto 0;
+  transition: background 0.3s;
+  width: 150px; /* Largeur fixe pour le bouton "Next" */
+}
+
+.quiz-next-btn:hover {
+  background: #388e91;
+}
+
+/* Quiz Question */
+.quiz-question {
+  text-align: center;
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+
+.quiz-option.checked {
+  background: #56acaf;
+  color: #fff;
+}
+
+/*********************************************/
+
+/* Result Section */
+.quiz-result-title {
+  text-align: center;
+  font-size: 28px;
+  color: #56acaf;
+  margin-bottom: 20px;
+}
+.quiz-result {
+  background: rgba(67, 172, 162, 0.9); /* Fond blanc semi-transparent */
+  border-radius: 20px; /* Coins arrondis */
+  padding: 40px 20px; /* Espacement intérieur */
+  width: 700px; /* Largeur fixe */
+  max-width: 90%; /* S'adapte aux petits écrans */
+  margin: 0 auto; /* Centre horizontalement */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Ombre douce */
+  text-align: center; /* Centrer tout le contenu */
+  backdrop-filter: blur(10px); /* Flou arrière-plan pour un effet moderne */
+  -webkit-backdrop-filter: blur(10px); /* Compatibilité WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure subtile */
+}
+
+.quiz-result h2 {
+  font-size: 28px; /* Taille du texte pour le titre */
+  color: #003366; /* Couleur bleu foncé */
+  margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.quiz-result p {
+  font-size: 18px; /* Taille du texte pour les paragraphes */
+  color: #555; /* Couleur gris doux */
+  line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+  margin-bottom: 20px; /* Espacement sous chaque paragraphe */
+}
+
+.quiz-result .score {
+  font-size: 36px; /* Taille importante pour afficher le score */
+  color: #4be1e7; /* Couleur bleu clair pour mettre en valeur */
+  font-weight: bold; /* Texte en gras */
+  margin: 20px 0; /* Espacement autour du score */
+}
+
+.quiz-score {
+  text-align: center;
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.quiz-submit-btn, .quiz-restart-btn {
+  display: block;
+  background: #56acaf;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px auto;
+  transition: background 0.3s;
+}
+
+.quiz-submit-btn:hover, .quiz-restart-btn:hover {
+  background: #56acaf;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
     padding: 20px;
-    align-items: center;       /* Centre verticalement */           /* Utilise toute la hauteur de la fenêtre */
-    text-align: center; 
   }
-  
-  .card-image img {
-    width: 100%;
-    height: 20%;
+
+  .quiz-title {
+    font-size: 28px;
   }
-  
-  .card-content {
-    padding: 20px;
-    text-align: center;
-    color: #333;
+
+  .quiz-question {
+    font-size: 18px;
   }
-  
-  .Quiz .card-content button {
-    font-size: 1.25em;
-    box-shadow: 2px 2px 4px rgba(255, 132, 132, 0.2);
-    border-radius: 10px;
-    transition: transform 0.2s, box-shadow 0.2s;
+
+  .quiz-option {
+    font-size: 16px;
   }
-  
-  .Quiz .card-content button:hover {
-    transform: scale(1.1);
-    box-shadow: 4px 4px 6px rgba(215, 66, 66, 0.4);
-    cursor: alias;
+
+  .quiz-next-btn, .quiz-submit-btn, .quiz-restart-btn {
+    font-size: 16px;
   }
-  
-  .Quiz .card-content h2 {
-    text-decoration: underline;
-    font-size: 1.75em;
-  }
-  .Quiz .end-note {
-    margin-top: 2.5em;
-    text-align: center;
-    color: red;
-    font-size: 1.25em;
-    margin-bottom: 50px;
-  }
-  
-  .commonQuiz h2 {
-    text-decoration: underline;
-    margin-bottom: 1em;
-  }
-  
-  .commonQuiz h3 {
-    font-size: 1.75em;
-    margin-bottom: 2em;
-    text-align: center;
-  }
-  
-  .commonQuiz p {
-    margin-bottom: 3em;
-  }
-  
-  .commonQuiz .container {
-    margin-top: 2%;
-    margin-bottom: 5%;
-    align-items: center;
-    min-height: 100%;
-    width: 80%;
-    border-radius: 15px;
-    overflow: hidden;
-    padding: 40px;
-  
-    margin-left: 10%;
-    height: 70%;
-    
-  }
-  
-  .commonQuiz .option-btn {
-    font-size: 1em;
-    box-shadow: 0px 0px 6px 1px rgb(26, 24, 24);
-    padding: 20px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    transition: 0.3s;
-    margin: 10px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    opacity: 0.7;
-  }
-  
-  .commonQuiz .option-btn.checked,
-  .commonQuiz .option-btn:hover {
-    background-color: rgb(190, 217, 227);
-    color: rgb(255, 255, 255);
-    box-shadow: 4px 4px 6px 2px rgb(78, 69, 78);
-  }
-  
-  .commonQuiz .option-container {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    padding: 10px;
-  }
-  
-  #next-button {
-    padding: 10px;
-    border: none;
-    background-color: rgb(38, 165, 212);
-    background-color: #276272;
-    color: white;
-    border-radius: 5px;
-    box-shadow: 3px 3px 2px 1px rgb(127, 109, 109);
-    font-size: larger;
-    font-weight: bold;
-    transition: 0.2s;
-    width: 20%;
-    left: 30px;
-    margin-left: 80%;
-    bottom: 15px;
-  }
-  
-  #next-button:active {
-    box-shadow: none;
-  }
-  #retake-button {
-    align-items: center;
-  }
-  
-  #submit-button {
-    display: none;
-  }
-  
-  .commonQuiz .button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 26px;
-    background-color: #276272;
-    color: #fbfbfb;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 40%;
-  }
-  
-  .commonQuiz .score {
-    font-size: 5em;
-    margin-top: 2%;
-    margin-bottom: 2%;
-  }
-  .show-score p {
-    font-size: 2em;
-  }
-  
-  .commonQuiz .result-heading {
-    font-size: 3em;
-  }
-  
-  .createPostPage {
-    width: 100%;
-    height: auto;
-    display: grid;
-    place-items: center;
-  }
-  
-  .createPostPage .cpContainer {
-    margin-top: 4em;
-    margin-bottom: 4em;
-    width: 70%;
-    height: auto;
-    padding: 20px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid rgb(81, 80, 80);
-  }
-  
-  .createPostPage .cpContainer h1 {
-    margin-top: 2%;
-    text-align: center;
-    text-decoration: underline;
-  }
-  
-  .createPostPage .cpContainer label {
-    margin-top: 2%;
-    font-size: 2em;
-    color: #000000;
-  }
-  
-  .createPostPage .cpContainer .inputGp {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .createPostPage .inputGp input,
-  .createPostPage .inputGp textarea {
-    font-size: 2em;
-    opacity: 0.7;
-    padding: 7px;
-  }
-  
-  .createPostPage .inputGp textarea {
-    font-size: 2em;
-    height: 250px;
-  }
-  
-  .createPostPage .cpContainer button {
-    padding: 10px;
-    border: none;
-    background-color: rgb(38, 165, 212);
-    background-color: #276272;
-    color: white;
-    border-radius: 5px;
-    font-size: 1.5em;
-    font-weight: bold;
-    transition: 0.2s;
-    width: 60%;
-    left: 30px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 20%;
-    bottom: 15px;
-  }
-  
-  .createPostPage input,
-  .createPostPage textarea {
-    margin-top: 5px;
-  }
+}

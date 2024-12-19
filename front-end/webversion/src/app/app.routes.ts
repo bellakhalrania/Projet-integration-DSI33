@@ -10,6 +10,8 @@ import { ChatBotComponent } from './layouts/chat-bot/chat-bot.component';
 
 
 
+
+
 export const routes: Routes = [
     { path:'',component:UserfrontComponent,children: [
        {path:'',loadComponent:()=>import('./views/front/home/home.component').then(c=>c.HomeComponent)},
@@ -31,7 +33,8 @@ export const routes: Routes = [
         {path:'depression-quiz',loadComponent:()=>import('./views/user/depression-quiz/depression-quiz.component').then(c=>c.DepressionQuizComponent)},
         {path:'adhd-quiz',loadComponent:()=>import('./views/user/adhd-quiz/adhd-quiz.component').then(c=>c.AdhdQuizComponent)},
         {path:'quiz',loadComponent:()=>import('./views/user/quiz/quiz.component').then(c=>c.QuizComponent)},
-
+        {path:'exercises',loadComponent:()=>import('./views/user/exercices/exercices.component').then(c=>c.ExercicesComponent)},
+        {path:'video-player',loadComponent:()=>import('./views/user/video-player/video-player.component').then(c=>c.VideoPlayerComponent) } 
         ]},
 
        
@@ -41,7 +44,7 @@ export const routes: Routes = [
 
 
 
-    ,{path:'admin',component:AdminFrontComponent,children: [
+    {path:'admin',component:AdminFrontComponent,children: [
 
       {path:'ajouter-exercice',loadComponent:()=>import('./views/admin/ajouter-exercice/ajouter-exercice.component').then(c=>c.AjouterExerciceComponent)},
       {path:'list-exercices',loadComponent:()=>import('./views/admin/list-exercices/list-exercices.component').then(c=>c.ListExercicesComponent)},
@@ -52,7 +55,7 @@ export const routes: Routes = [
    
     
    
-    //{path:'login',component:LoginComponent},
+   
  
 
 

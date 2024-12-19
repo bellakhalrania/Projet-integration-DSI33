@@ -1,17 +1,17 @@
-/* Conteneur principal de la section Why Choose Us */
+
 .bg-style{
   background-image: url(../../../../assets/bijita.JPG);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .why-choose-us-section {
-    background-color: #f9f9f9; /* Optionnel, pour ajouter une couleur de fond subtile à la section */
+    background-color: #f9f9f9; 
     padding: 40px 0;
     text-align: center;
   }
   
   .section-title {
-    font-size: 2.5rem; /* Taille du titre */
+    font-size: 2.5rem; 
     margin-bottom: 20px;
   }
   
@@ -20,20 +20,19 @@
     margin-bottom: 30px;
   }
   
-  /* Liste des éléments */
   .why-choose-list {
-    list-style-type: none; /* Retirer les puces */
+    list-style-type: none;
     padding: 0;
   }
   
   .why-choose-item {
-    background-color: #fff; /* Fond blanc pour chaque élément */
-    border: 1px solid #ddd; /* Bordure grise légère */
-    border-radius: 8px; /* Coins arrondis pour plus de douceur */
-    margin-bottom: 20px; /* Espacement entre les éléments */
-    padding: 20px; /* Espacement intérieur */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effet de transition */
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
   }
   
   /* Effet au survol de chaque élément */

@@ -1,8 +1,6 @@
 
-
 (function() {
   "use strict";
-
 
   /**
    * Easy selector helper function
@@ -30,27 +28,12 @@
     }
   }
 
- 
-  function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    
-
-   
-  }
-
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
-
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-
   /**
    * Easy on scroll event listener 
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
-
 
   /**
    * Navbar links active state on scroll
@@ -66,13 +49,6 @@
         navbarlink.classList.add('active')
       } else {
         navbarlink.classList.remove('active')
-
-  
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
-
       }
     })
   }
@@ -92,7 +68,6 @@
       behavior: 'smooth'
     })
   }
-
 
   /**
    * Toggle .header-scrolled class to #header when page is scrolled
@@ -135,28 +110,6 @@
     this.classList.toggle('bi-x')
   })
 
- 
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
-    });
-  });
-
-  
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
-
-  
-  let scrollTop = document.querySelector('.scroll-top');
-
-
   /**
    * Mobile nav dropdowns activate
    */
@@ -185,7 +138,6 @@
     }
   }, true)
 
-
   /**
    * Scroll with ofset on page load with hash links in the url
    */
@@ -204,19 +156,12 @@
   if (preloader) {
     window.addEventListener('load', () => {
       preloader.remove()
-
- 
-  function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-
     });
   }
 
-
+  /**
+   * Initiate  glightbox 
+   */
   const glightbox = GLightbox({
     selector: '.glightbox'
   });
@@ -248,8 +193,6 @@
         itemSelector: '.portfolio-item'
       });
 
-
-
       let portfolioFilters = select('#portfolio-flters li', true);
 
       on('click', '#portfolio-flters li', function(e) {
@@ -269,7 +212,6 @@
     }
 
   });
-
 
   /**
    * Initiate portfolio lightbox 
@@ -306,7 +248,6 @@
       mirror: false
     });
   });
-
 
 })()
 
@@ -504,3 +445,5 @@ tooltip: {
 },
 };
 
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();

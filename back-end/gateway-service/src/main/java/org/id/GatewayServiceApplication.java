@@ -15,6 +15,13 @@ public class GatewayServiceApplication {
 	@Bean
 	RouteLocator gatewayRoutes(RouteLocatorBuilder builder){
 	return builder.routes()
+
+
+             .route(r->r.path("/api/exercices/**").uri("http://localhost:8081/"))
+
+             .route(r->r.path("/api/groups/**").uri("http://localhost:8084/"))
+
+        
 			 // Route for CUSTOMER-SERVICE
             .route(r -> r.path("/customers/**")
                     .uri("lb://CUSTOMER-SERVICE")) // Load-balanced URI for the customer service

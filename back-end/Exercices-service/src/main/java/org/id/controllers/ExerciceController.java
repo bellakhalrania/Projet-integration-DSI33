@@ -24,7 +24,6 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/exercices")
-@CrossOrigin(origins = "http://localhost:4200") 
 public class ExerciceController {
 
     @Autowired
@@ -45,7 +44,7 @@ public class ExerciceController {
         @RequestParam("file") MultipartFile file,
         @RequestParam("videoUrl") String videourl
     ) {
-        // Ensure uploads directory exists
+        
         Path uploadsDir = Paths.get("uploads");
         if (!Files.exists(uploadsDir)) {
             try {
@@ -141,7 +140,7 @@ public class ExerciceController {
 
         Exercice exercice = optionalExercice.get();
 
-        // Update fields only if new values are provided
+     
         if (title != null && !title.isEmpty()) {
             exercice.setTitle(title);
         }
@@ -167,7 +166,7 @@ public class ExerciceController {
             }
         }
 
-        // Handle image update if a new image is provided
+       
         if (file != null && !file.isEmpty()) {
             String fileName = UUID.randomUUID() + "_" + file.getOriginalFilename();
             Path filePath = Paths.get("uploads/" + fileName);
@@ -189,101 +188,15 @@ public class ExerciceController {
     
     
     
-   /* @PutMapping("/{id}")
-    public ResponseEntity<Exercice> updateExercice(
-            @PathVariable Long id,
-            @RequestBody Exercice updatedExerciceData) {
-
-       
-        Exercice existingExercice = exerciceRepository.findById(id).orElse(null);
-        if (existingExercice == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
-      
-        existingExercice.setTitle(updatedExerciceData.getTitle());
-        existingExercice.setType(updatedExerciceData.getType());
-        existingExercice.setDescription(updatedExerciceData.getDescription());
-        existingExercice.setDuree(updatedExerciceData.getDuree());
-        existingExercice.setImagePath(updatedExerciceData.getImagePath());
-        existingExercice.setCreationDate(updatedExerciceData.getCreationDate());
-
-        
-        Exercice updatedExercice = exerciceRepository.save(existingExercice);
-
-        return ResponseEntity.ok(updatedExercice);
-    }*/
+  
     
     
     
-   /* @PutMapping("/{id}")
-    public ResponseEntity<Exercice> updateExercice(
-        @PathVariable Long id,
-        @RequestParam("title") String title,
-        @RequestParam("type") String type,
-        @RequestParam("description") String description,
-        @RequestParam("duree") String duree,
-        @RequestParam("creationDate") String creationDate,
-        @RequestParam(value = "file", required = false) MultipartFile file
-    ) throws ParseException {
-        Exercice existingExercice = exerciceRepository.findById(id).orElse(null);
-        if (existingExercice == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
-        existingExercice.setTitle(title);
-        existingExercice.setType(type);
-        existingExercice.setDescription(description);
-        existingExercice.setDuree(duree);
-        existingExercice.setCreationDate(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").parse(creationDate));
-
-        if (file != null && !file.isEmpty()) {
-            String fileName = UUID.randomUUID() + "_" + file.getOriginalFilename();
-            Path filePath = Paths.get("uploads/" + fileName);
-            try {
-                Files.write(filePath, file.getBytes());
-                existingExercice.setImagePath("http://localhost:8080/uploads/" + fileName);
-            } catch (IOException e) {
-                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-        }
-
-        Exercice updatedExercice = exerciceRepository.save(existingExercice);
-        return ResponseEntity.ok(updatedExercice);
-    }
-*/
+  
 
 
 
-    /*@PostMapping
-    public ResponseEntity<Exercice> createExercice(@RequestParam("title") String title,
-                                                   @RequestParam("type") String type,
-                                                   @RequestParam("description") String description,
-                                                   @RequestParam("duree") String duree,
-                                                   @RequestParam("creationDate") String creationDate,
-                                                   @RequestParam("image_path") String imagePath) {
-
-    
-        Exercice exercice = new Exercice();
-        exercice.setTitle(title);
-        exercice.setType(type);
-        exercice.setDescription(description);
-        exercice.setDuree(duree);
-        exercice.setImagePath(imagePath); 
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm"); 
-        try {
-            Date date = dateFormat.parse(creationDate); 
-            exercice.setCreationDate(date); 
-        } catch (ParseException e) {
-            e.printStackTrace(); 
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST); 
-        }
-
-        Exercice savedExercice = exerciceRepository.save(exercice);
-
-        return new ResponseEntity<>(savedExercice, HttpStatus.CREATED);
-    }*/
+  
     
     
    

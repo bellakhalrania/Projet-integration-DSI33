@@ -1,13 +1,14 @@
+
 <section id="services" class="services position-relative light-background" style="margin-top: 0px !important;">
-    <div class="meditation-resources">
-  <h2>Meditation, Yoga, Exercises and more...</h2>
-  <div class="resource-slider">
-    <div *ngFor="let item of dataArray;index as i" class="resource-card">
-      <a [href]="item.videourl" target="_blank" rel="noopener noreferrer">
-        <img [src]="item.imagePath" alt="{{item.title}}" width="150" height="150" />
-        <h4>{{ item.title }}</h4>
-      </a>
+  <div class="meditation-resources">
+    <h2>Meditation, Yoga, Exercises, and more...</h2>
+    <div class="resource-slider">
+      <div *ngFor="let item of dataArray; index as i" class="resource-card">
+        <div (click)="onSelectVideo(item.videourl)" class="clickable">
+          <img [src]="item.imagePath" alt="{{ item.title }}" width="150" height="150" />
+          <h4>{{ item.title }}</h4>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </section>

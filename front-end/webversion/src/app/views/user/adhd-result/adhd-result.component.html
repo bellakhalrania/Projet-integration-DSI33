@@ -1,14 +1,9 @@
-<div *ngIf="score > 1" class="card">
-    <h3>Your ADHD Score: {{ score }}</h3>
-    <p>
-      Based on your score, it seems like you may have ADHD. Please consult with a healthcare provider for a professional diagnosis.
-    </p>
-  </div>
-  
-  <div *ngIf="score <= 1">
-    <h3>Your ADHD Score: {{ score }}</h3>
-    <p>
-      Your results are within a normal range, but if you experience any issues, consider consulting with a professional.
-    </p>
-  </div>
-  
+<div class="card" [ngClass]="{ 'high-score': score > 1, 'low-score': score <= 1 }">
+  <h3>Your ADHD Score: {{ score }}</h3>
+  <p *ngIf="score > 1">
+    Based on your score, it seems like you may have ADHD. Please consult with a healthcare provider for a professional diagnosis.
+  </p>
+  <p *ngIf="score <= 1">
+    Your results are within a normal range, but if you experience any issues, consider consulting with a professional.
+  </p>
+</div>
