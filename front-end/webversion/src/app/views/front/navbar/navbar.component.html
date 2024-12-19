@@ -16,7 +16,7 @@
             <li><a routerLink="/about">About</a></li>
             <li><a routerLink="/contact">Contact</a></li>
             <li><a routerLink="/admin">admin</a></li>
-            <li><a routerLink="/client">client</a></li>
+            <li><a routerLink="/client/acceuil">client</a></li>
             <li *ngIf="isAuthenticated">
               <p [ngClass]="{
                 'admin-message': userRoles.includes('ADMIN'), 
