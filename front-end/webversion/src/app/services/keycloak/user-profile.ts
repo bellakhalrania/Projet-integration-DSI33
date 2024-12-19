@@ -4,5 +4,10 @@ export interface UserProfile {
     email?:string;
     firstName?:string;
     lastName?:string;
-    token?:string
+    role?:string;
+    token?:string;
+    realm_access?: {
+        roles: string[];
+      };
+
 }

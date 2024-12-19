@@ -1,0 +1,10 @@
+.admin-message {
+    color: #2196F3;  /* Blue for admin */
+    font-weight: bold;
+  }
+  
+  .user-message {
+    color: #4CAF50;  /* Green for user */
+    font-weight: normal;
+  }
+  
