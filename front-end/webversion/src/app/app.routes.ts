@@ -44,6 +44,8 @@ export const routes: Routes = [
         canActivate: [AuthGuard], data: { roles: ['ROLE_USER'] } },
       { path: 'quiz', loadComponent: () => import('./views/user/quiz/quiz.component').then(c => c.QuizComponent),
         canActivate: [AuthGuard], data: { roles: ['ROLE_USER'] } },
+      { path: 'userprofile', loadComponent: () => import('./views/user/userprofile/userprofile.component').then(c => c.UserprofileComponent),
+          canActivate: [AuthGuard], data: { roles: ['ROLE_USER'] } },
     ]
   },
 

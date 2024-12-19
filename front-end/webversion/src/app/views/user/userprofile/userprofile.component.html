@@ -1,0 +1,28 @@
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section">
+    <div class="hero-bg">
+      <img src="assets/front/img/hero-bg-light.webp" alt="">
+    
+    
+    </div>
+    <div class="container">
+       
+       <div class="user-profile-container">
+        <div class="profile-card">
+          <img src="assets/front/img/user-avatar.png" alt="User Avatar" class="profile-avatar">
+
+          <h2 class="profile-name">{{ userProfile?.username }}</h2>
+          <p class="profile-name">{{ userProfile?.firstName }}</p>
+          <p class="profile-name">{{ userProfile?.lastName }}</p>
+          <p class="profile-email role">ROLE_USER</p>
+          <p class="profile-email">{{ userProfile?.email }}</p>
+      
+          <div class="profile-actions">
+            <button class="btn logout-btn" *ngIf="isAuthenticated" (click)="logout()" >Logout</button>
+          </div>
+        </div>
+      
+</div>
+</div>
+  </section><!-- /Hero Section -->
